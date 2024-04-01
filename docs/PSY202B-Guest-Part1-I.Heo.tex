@@ -1,0 +1,325 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\usepackage{amsthm}
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=8pt plus 2pt minus 4pt
+  \thm@postskip=\thm@preskip
+}
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={{[}PSY202B Guest Lecture{]} Statistical Modeling in Psychological Sciences},
+  pdfauthor={Ihnwhi Heo, M.Sc.},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{{[}PSY202B Guest Lecture{]} Statistical Modeling in Psychological Sciences}
+\author{\href{https://ihnwhiheo.github.io/}{Ihnwhi Heo, M.Sc.}}
+\date{Spring 2024}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{introduction}{%
+\chapter{Introduction}\label{introduction}}
+
+Hi everyone! I'm Ihnwhi.
+
+It is my great pleasure to be your guest lecturer for PSY202B. The theme of my lecture is statistical modeling in psychological sciences. An essential aspect of psychological research is statistical modeling based on substantive theories. I will briefly introduce Mplus and walk you around several analytic techniques using Mplus. This GitBook is your guide such that you can easily access code for Mplus practicals. Let's embark on this exciting learning together!
+
+\hypertarget{introduction-to-mplus}{%
+\chapter{Introduction to Mplus}\label{introduction-to-mplus}}
+
+\hypertarget{what-is-it-why-called-mplus}{%
+\section{What is it? Why called Mplus?}\label{what-is-it-why-called-mplus}}
+
+Mplus is a statistical modeling program that provides researchers with a flexible tool to analyze data
+
+\begin{itemize}
+\item
+  Many models: regression, path analysis, factor analysis, SEM, MLM, longitudinal models, mixture model, mediation/moderation
+\item
+  Many data: cross-sectional, longitudinal, single-/multilevel, observed/latent, incomplete
+\item
+  Many variables: continuous, dichotomous, categorical, count
+\item
+  Many estimator: maximum likelihood, weighted least squares, Bayesian
+\end{itemize}
+
+\hypertarget{syntax-based-programming}{%
+\section{Syntax-based programming}\label{syntax-based-programming}}
+
+\begin{itemize}
+\item
+  Commands and subcommands (\url{https://www.statmodel.com/language.html})
+\item
+  Examples of commands? (\url{https://www.youtube.com/watch?v=XeRRtdmu23k})
+\end{itemize}
+
+TITLE, DATA, VARIABLE, ANALYSIS, MODEL, OUTPUT
+
+DEFINE, SAVEDATA, PLOT, MONTECARLO
+
+\hypertarget{some-tips-when-programming}{%
+\section{Some tips when programming}\label{some-tips-when-programming}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Comments can be added with exclamation marks (!)
+\item
+  Commands should end with colon (:), and subcommands should end with semicolon (;)
+\item
+  Syntax is not case sensitive
+\item
+  Data should consist of numeric values, with no variable names
+\item
+  Data and Mplus input file should be in the same directory (like an R working directory)
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Otherwise, be sure to specify the correct directory
+\end{itemize}
+
+\hypertarget{some-tips-about-model-command-particularly}{%
+\section{Some tips about model command particularly}\label{some-tips-about-model-command-particularly}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Start with a path diagram
+\item
+  Think of it as specifying model parameters
+\item
+  Care to the degrees of freedom (DF)
+\end{enumerate}
+
+\hypertarget{example.-multiple-linear-regression-using-maximum-likelihood-estimation}{%
+\section{Example. Multiple linear regression using maximum likelihood estimation}\label{example.-multiple-linear-regression-using-maximum-likelihood-estimation}}
+
+\hypertarget{model-syntax}{%
+\subsection{Model syntax}\label{model-syntax}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialCharTok{!}\NormalTok{ Title command}
+\NormalTok{TITLE}\SpecialCharTok{:}\NormalTok{ Predicting album sales using ML multiple regression}
+
+\SpecialCharTok{!}\NormalTok{ Data command}
+\NormalTok{DATA}\SpecialCharTok{:}
+    \SpecialCharTok{!}\NormalTok{ When data and input file are }\ControlFlowTok{in}\NormalTok{ the same working directory}
+\NormalTok{    FILE IS Album Sales.csv; }\SpecialCharTok{!}\NormalTok{ Subcommands should end with ;}
+
+    \SpecialCharTok{!}\NormalTok{ When data and input file are }\ControlFlowTok{in}\NormalTok{ the different working directory}
+    \SpecialCharTok{!}\NormalTok{ FILE IS c}\SpecialCharTok{:}\NormalTok{\textbackslash{}desktop\textbackslash{}different folder\textbackslash{}Album Sales.csv;}
+
+\SpecialCharTok{!}\NormalTok{ Variable command}
+\NormalTok{VARIABLE}\SpecialCharTok{:}
+    \SpecialCharTok{!}\NormalTok{ Column }\FunctionTok{names}\NormalTok{ (i.e., ALL variable names)}
+\NormalTok{    NAMES ARE adverts sales airplay attract;}
+    
+    \SpecialCharTok{!}\NormalTok{ Variables that will be used }\ControlFlowTok{in}\NormalTok{ our analysis}
+\NormalTok{    USEVARIABLES ARE adverts sales airplay;}
+    
+\SpecialCharTok{!}\NormalTok{ Analysis command}
+\NormalTok{ANALYSIS}\SpecialCharTok{:}
+\NormalTok{    ESTIMATOR IS ML; }\SpecialCharTok{!}\NormalTok{ This is the default}
+
+\SpecialCharTok{!}\NormalTok{ Model command}
+\NormalTok{MODEL}\SpecialCharTok{:}
+    \SpecialCharTok{!}\NormalTok{ Let}\StringTok{\textquotesingle{}s predict sales using adverts and airplay}
+\StringTok{    ! We regress sales on adverts and airplay}
+\StringTok{    sales ON adverts airplay;}
+
+\StringTok{    ! If you do not specify variances of and covariances between predictors}
+\StringTok{    ! degrees of freedom (DF) are not correct}
+\StringTok{    ! Variances of exogenous variable}
+\StringTok{    adverts airplay;}
+\StringTok{    ! Covariances between exogenous variable}
+\StringTok{    adverts WITH airplay;}
+
+\StringTok{! Output command}
+\StringTok{OUTPUT:}
+\StringTok{    TECH1 SAMPSTAT STDYX;}
+\StringTok{    ! TECH1 to understand which parameters are being estimated}
+\StringTok{    ! SAMPSTAT to check sample descriptive statistics}
+\StringTok{    ! STDYX to standardize Y (i.e., DV) and X (i.e., IV)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{part-of-the-output-file}{%
+\subsection{Part of the output file}\label{part-of-the-output-file}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{MODEL RESULTS}
+
+\NormalTok{                                                    Two}\SpecialCharTok{{-}}\NormalTok{Tailed}
+\NormalTok{                    Estimate       S.E.  Est.}\SpecialCharTok{/}\NormalTok{S.E.    P}\SpecialCharTok{{-}}\NormalTok{Value}
+
+\NormalTok{ SALES    ON}
+\NormalTok{    ADVERTS            }\FloatTok{0.087}      \FloatTok{0.007}     \FloatTok{12.082}      \FloatTok{0.000}
+\NormalTok{    AIRPLAY            }\FloatTok{3.589}      \FloatTok{0.285}     \FloatTok{12.608}      \FloatTok{0.000}
+
+\NormalTok{ ADVERTS  WITH}
+\NormalTok{    AIRPLAY          }\FloatTok{604.061}    \FloatTok{421.412}      \FloatTok{1.433}      \FloatTok{0.152}
+
+\NormalTok{ Means}
+\NormalTok{    ADVERTS          }\FloatTok{614.412}     \FloatTok{34.255}     \FloatTok{17.936}      \FloatTok{0.000}
+\NormalTok{    AIRPLAY           }\FloatTok{27.500}      \FloatTok{0.865}     \FloatTok{31.777}      \FloatTok{0.000}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{additional-materials}{%
+\section{Additional materials}\label{additional-materials}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Official website at \url{https://www.statmodel.com/}
+\item
+  User's guide and examples at \url{https://www.statmodel.com/ugexcerpts.shtml} \(\rightarrow\) Highly recommended!
+\item
+  Mplus YouTube channel at \url{https://www.youtube.com/c/MplusVideos}
+\item
+  QuantFish YouTube channel at \url{https://www.youtube.com/c/QuantFish}
+\item
+  Tutorials by Prof.~Rens van de Schoot and his students at \url{https://www.rensvandeschoot.com/tutorials/}
+\end{enumerate}
+
+\hypertarget{path-analysis}{%
+\chapter{Path Analysis}\label{path-analysis}}
+
+This Chapter is empty, and only exists to show that you can link to chapters by title.
+
+\hypertarget{confirmatory-factor-analysis}{%
+\chapter{Confirmatory Factor Analysis}\label{confirmatory-factor-analysis}}
+
+This Chapter is empty, and only exists to show that you can link to chapters by title.
+
+\hypertarget{structural-equation-modeling}{%
+\chapter{Structural Equation Modeling}\label{structural-equation-modeling}}
+
+This Chapter is empty, and only exists to show that you can link to chapters by title.
+
+  \bibliography{book.bib,packages.bib}
+
+\end{document}

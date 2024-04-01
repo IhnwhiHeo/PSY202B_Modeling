@@ -1,0 +1,126 @@
+# Introduction to Mplus
+
+## What is it? Why called Mplus?
+
+Mplus is a statistical modeling program that provides researchers with a flexible tool to analyze data
+
+- Many models: regression, path analysis, factor analysis, SEM, MLM, longitudinal models, mixture model, mediation/moderation
+
+- Many data: cross-sectional, longitudinal, single-/multilevel, observed/latent, incomplete
+
+- Many variables: continuous, dichotomous, categorical, count
+
+- Many estimator: maximum likelihood, weighted least squares, Bayesian
+
+## Syntax-based programming
+
+- Commands and subcommands (https://www.statmodel.com/language.html)
+
+- Examples of commands? (https://www.youtube.com/watch?v=XeRRtdmu23k)
+
+TITLE, DATA, VARIABLE, ANALYSIS, MODEL, OUTPUT
+
+DEFINE, SAVEDATA, PLOT, MONTECARLO
+
+## Some tips when programming
+
+1. Comments can be added with exclamation marks (!)
+
+2. Commands should end with colon (:), and subcommands should end with semicolon (;)
+
+3. Syntax is not case sensitive
+
+4. Data should consist of numeric values, with no variable names
+
+5. Data and Mplus input file should be in the same directory (like an R working directory)
+
+- Otherwise, be sure to specify the correct directory
+
+## Some tips about model command particularly
+
+1. Start with a path diagram
+
+2. Think of it as specifying model parameters
+
+3. Care to the degrees of freedom (DF)
+
+## Example. Multiple linear regression using maximum likelihood estimation
+
+### Model syntax
+
+```{r, eval=FALSE}
+! Title command
+TITLE: Predicting album sales using ML multiple regression
+
+! Data command
+DATA:
+	! When data and input file are in the same working directory
+	FILE IS Album Sales.csv; ! Subcommands should end with ;
+
+	! When data and input file are in the different working directory
+	! FILE IS c:\desktop\different folder\Album Sales.csv;
+
+! Variable command
+VARIABLE:
+	! Column names (i.e., ALL variable names)
+	NAMES ARE adverts sales airplay attract;
+	
+	! Variables that will be used in our analysis
+	USEVARIABLES ARE adverts sales airplay;
+	
+! Analysis command
+ANALYSIS:
+	ESTIMATOR IS ML; ! This is the default
+
+! Model command
+MODEL:
+	! Let's predict sales using adverts and airplay
+	! We regress sales on adverts and airplay
+	sales ON adverts airplay;
+
+	! If you do not specify variances of and covariances between predictors
+	! degrees of freedom (DF) are not correct
+	! Variances of exogenous variable
+	adverts airplay;
+	! Covariances between exogenous variable
+	adverts WITH airplay;
+
+! Output command
+OUTPUT:
+	TECH1 SAMPSTAT STDYX;
+	! TECH1 to understand which parameters are being estimated
+	! SAMPSTAT to check sample descriptive statistics
+	! STDYX to standardize Y (i.e., DV) and X (i.e., IV)
+```
+
+### Part of the output file
+
+```{r, eval=FALSE}
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ SALES    ON
+    ADVERTS            0.087      0.007     12.082      0.000
+    AIRPLAY            3.589      0.285     12.608      0.000
+
+ ADVERTS  WITH
+    AIRPLAY          604.061    421.412      1.433      0.152
+
+ Means
+    ADVERTS          614.412     34.255     17.936      0.000
+    AIRPLAY           27.500      0.865     31.777      0.000
+```
+
+## Additional materials
+
+1. Official website at https://www.statmodel.com/
+
+2. User's guide and examples at https://www.statmodel.com/ugexcerpts.shtml <br> $\rightarrow$ Highly recommended!
+
+3. Mplus YouTube channel at https://www.youtube.com/c/MplusVideos
+
+4. QuantFish YouTube channel at https://www.youtube.com/c/QuantFish
+
+5. Tutorials by Prof. Rens van de Schoot and his students at https://www.rensvandeschoot.com/tutorials/

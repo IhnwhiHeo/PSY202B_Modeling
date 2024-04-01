@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Introduction to Mplus | [PSY202B Guest Lecture] Statistical Modeling in Psychological Sciences</title>
+  <meta name="description" content="This GitBook is for guest lectures in PSY202B." />
+  <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Introduction to Mplus | [PSY202B Guest Lecture] Statistical Modeling in Psychological Sciences" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This GitBook is for guest lectures in PSY202B." />
+  <meta name="github-repo" content="ihnwhiheo/gitbook-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Introduction to Mplus | [PSY202B Guest Lecture] Statistical Modeling in Psychological Sciences" />
+  
+  <meta name="twitter:description" content="This GitBook is for guest lectures in PSY202B." />
+  
+
+<meta name="author" content="Ihnwhi Heo, M.Sc." />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="path-analysis.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a>PSY202B Guest Lecture: Modeling</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="introduction-to-mplus.html"><a href="introduction-to-mplus.html"><i class="fa fa-check"></i><b>2</b> Introduction to Mplus</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introduction-to-mplus.html"><a href="introduction-to-mplus.html#what-is-it-why-called-mplus"><i class="fa fa-check"></i><b>2.1</b> What is it? Why called Mplus?</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction-to-mplus.html"><a href="introduction-to-mplus.html#syntax-based-programming"><i class="fa fa-check"></i><b>2.2</b> Syntax-based programming</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction-to-mplus.html"><a href="introduction-to-mplus.html#some-tips-when-programming"><i class="fa fa-check"></i><b>2.3</b> Some tips when programming</a></li>
+<li class="chapter" data-level="2.4" data-path="introduction-to-mplus.html"><a href="introduction-to-mplus.html#some-tips-about-model-command-particularly"><i class="fa fa-check"></i><b>2.4</b> Some tips about model command particularly</a></li>
+<li class="chapter" data-level="2.5" data-path="introduction-to-mplus.html"><a href="introduction-to-mplus.html#example.-multiple-linear-regression-using-maximum-likelihood-estimation"><i class="fa fa-check"></i><b>2.5</b> Example. Multiple linear regression using maximum likelihood estimation</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="introduction-to-mplus.html"><a href="introduction-to-mplus.html#model-syntax"><i class="fa fa-check"></i><b>2.5.1</b> Model syntax</a></li>
+<li class="chapter" data-level="2.5.2" data-path="introduction-to-mplus.html"><a href="introduction-to-mplus.html#part-of-the-output-file"><i class="fa fa-check"></i><b>2.5.2</b> Part of the output file</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="introduction-to-mplus.html"><a href="introduction-to-mplus.html#additional-materials"><i class="fa fa-check"></i><b>2.6</b> Additional materials</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="path-analysis.html"><a href="path-analysis.html"><i class="fa fa-check"></i><b>3</b> Path Analysis</a></li>
+<li class="chapter" data-level="4" data-path="confirmatory-factor-analysis.html"><a href="confirmatory-factor-analysis.html"><i class="fa fa-check"></i><b>4</b> Confirmatory Factor Analysis</a></li>
+<li class="chapter" data-level="5" data-path="structural-equation-modeling.html"><a href="structural-equation-modeling.html"><i class="fa fa-check"></i><b>5</b> Structural Equation Modeling</a></li>
+<li class="divider"></li>
+<li><a>Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">[PSY202B Guest Lecture] Statistical Modeling in Psychological Sciences</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introduction-to-mplus" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Introduction to Mplus<a href="introduction-to-mplus.html#introduction-to-mplus" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="what-is-it-why-called-mplus" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> What is it? Why called Mplus?<a href="introduction-to-mplus.html#what-is-it-why-called-mplus" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Mplus is a statistical modeling program that provides researchers with a flexible tool to analyze data</p>
+<ul>
+<li><p>Many models: regression, path analysis, factor analysis, SEM, MLM, longitudinal models, mixture model, mediation/moderation</p></li>
+<li><p>Many data: cross-sectional, longitudinal, single-/multilevel, observed/latent, incomplete</p></li>
+<li><p>Many variables: continuous, dichotomous, categorical, count</p></li>
+<li><p>Many estimator: maximum likelihood, weighted least squares, Bayesian</p></li>
+</ul>
+</div>
+<div id="syntax-based-programming" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Syntax-based programming<a href="introduction-to-mplus.html#syntax-based-programming" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>Commands and subcommands (<a href="https://www.statmodel.com/language.html" class="uri">https://www.statmodel.com/language.html</a>)</p></li>
+<li><p>Examples of commands? (<a href="https://www.youtube.com/watch?v=XeRRtdmu23k" class="uri">https://www.youtube.com/watch?v=XeRRtdmu23k</a>)</p></li>
+</ul>
+<p>TITLE, DATA, VARIABLE, ANALYSIS, MODEL, OUTPUT</p>
+<p>DEFINE, SAVEDATA, PLOT, MONTECARLO</p>
+</div>
+<div id="some-tips-when-programming" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Some tips when programming<a href="introduction-to-mplus.html#some-tips-when-programming" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><p>Comments can be added with exclamation marks (!)</p></li>
+<li><p>Commands should end with colon (:), and subcommands should end with semicolon (;)</p></li>
+<li><p>Syntax is not case sensitive</p></li>
+<li><p>Data should consist of numeric values, with no variable names</p></li>
+<li><p>Data and Mplus input file should be in the same directory (like an R working directory)</p></li>
+</ol>
+<ul>
+<li>Otherwise, be sure to specify the correct directory</li>
+</ul>
+</div>
+<div id="some-tips-about-model-command-particularly" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Some tips about model command particularly<a href="introduction-to-mplus.html#some-tips-about-model-command-particularly" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><p>Start with a path diagram</p></li>
+<li><p>Think of it as specifying model parameters</p></li>
+<li><p>Care to the degrees of freedom (DF)</p></li>
+</ol>
+</div>
+<div id="example.-multiple-linear-regression-using-maximum-likelihood-estimation" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Example. Multiple linear regression using maximum likelihood estimation<a href="introduction-to-mplus.html#example.-multiple-linear-regression-using-maximum-likelihood-estimation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="model-syntax" class="section level3 hasAnchor" number="2.5.1">
+<h3><span class="header-section-number">2.5.1</span> Model syntax<a href="introduction-to-mplus.html#model-syntax" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="introduction-to-mplus.html#cb1-1" tabindex="-1"></a><span class="sc">!</span> Title command</span>
+<span id="cb1-2"><a href="introduction-to-mplus.html#cb1-2" tabindex="-1"></a>TITLE<span class="sc">:</span> Predicting album sales using ML multiple regression</span>
+<span id="cb1-3"><a href="introduction-to-mplus.html#cb1-3" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="introduction-to-mplus.html#cb1-4" tabindex="-1"></a><span class="sc">!</span> Data command</span>
+<span id="cb1-5"><a href="introduction-to-mplus.html#cb1-5" tabindex="-1"></a>DATA<span class="sc">:</span></span>
+<span id="cb1-6"><a href="introduction-to-mplus.html#cb1-6" tabindex="-1"></a>    <span class="sc">!</span> When data and input file are <span class="cf">in</span> the same working directory</span>
+<span id="cb1-7"><a href="introduction-to-mplus.html#cb1-7" tabindex="-1"></a>    FILE IS Album Sales.csv; <span class="sc">!</span> Subcommands should end with ;</span>
+<span id="cb1-8"><a href="introduction-to-mplus.html#cb1-8" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="introduction-to-mplus.html#cb1-9" tabindex="-1"></a>    <span class="sc">!</span> When data and input file are <span class="cf">in</span> the different working directory</span>
+<span id="cb1-10"><a href="introduction-to-mplus.html#cb1-10" tabindex="-1"></a>    <span class="sc">!</span> FILE IS c<span class="sc">:</span>\desktop\different folder\Album Sales.csv;</span>
+<span id="cb1-11"><a href="introduction-to-mplus.html#cb1-11" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="introduction-to-mplus.html#cb1-12" tabindex="-1"></a><span class="sc">!</span> Variable command</span>
+<span id="cb1-13"><a href="introduction-to-mplus.html#cb1-13" tabindex="-1"></a>VARIABLE<span class="sc">:</span></span>
+<span id="cb1-14"><a href="introduction-to-mplus.html#cb1-14" tabindex="-1"></a>    <span class="sc">!</span> Column <span class="fu">names</span> (i.e., ALL variable names)</span>
+<span id="cb1-15"><a href="introduction-to-mplus.html#cb1-15" tabindex="-1"></a>    NAMES ARE adverts sales airplay attract;</span>
+<span id="cb1-16"><a href="introduction-to-mplus.html#cb1-16" tabindex="-1"></a>    </span>
+<span id="cb1-17"><a href="introduction-to-mplus.html#cb1-17" tabindex="-1"></a>    <span class="sc">!</span> Variables that will be used <span class="cf">in</span> our analysis</span>
+<span id="cb1-18"><a href="introduction-to-mplus.html#cb1-18" tabindex="-1"></a>    USEVARIABLES ARE adverts sales airplay;</span>
+<span id="cb1-19"><a href="introduction-to-mplus.html#cb1-19" tabindex="-1"></a>    </span>
+<span id="cb1-20"><a href="introduction-to-mplus.html#cb1-20" tabindex="-1"></a><span class="sc">!</span> Analysis command</span>
+<span id="cb1-21"><a href="introduction-to-mplus.html#cb1-21" tabindex="-1"></a>ANALYSIS<span class="sc">:</span></span>
+<span id="cb1-22"><a href="introduction-to-mplus.html#cb1-22" tabindex="-1"></a>    ESTIMATOR IS ML; <span class="sc">!</span> This is the default</span>
+<span id="cb1-23"><a href="introduction-to-mplus.html#cb1-23" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="introduction-to-mplus.html#cb1-24" tabindex="-1"></a><span class="sc">!</span> Model command</span>
+<span id="cb1-25"><a href="introduction-to-mplus.html#cb1-25" tabindex="-1"></a>MODEL<span class="sc">:</span></span>
+<span id="cb1-26"><a href="introduction-to-mplus.html#cb1-26" tabindex="-1"></a>    <span class="sc">!</span> Let<span class="st">&#39;s predict sales using adverts and airplay</span></span>
+<span id="cb1-27"><a href="introduction-to-mplus.html#cb1-27" tabindex="-1"></a><span class="st">    ! We regress sales on adverts and airplay</span></span>
+<span id="cb1-28"><a href="introduction-to-mplus.html#cb1-28" tabindex="-1"></a><span class="st">    sales ON adverts airplay;</span></span>
+<span id="cb1-29"><a href="introduction-to-mplus.html#cb1-29" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="introduction-to-mplus.html#cb1-30" tabindex="-1"></a><span class="st">    ! If you do not specify variances of and covariances between predictors</span></span>
+<span id="cb1-31"><a href="introduction-to-mplus.html#cb1-31" tabindex="-1"></a><span class="st">    ! degrees of freedom (DF) are not correct</span></span>
+<span id="cb1-32"><a href="introduction-to-mplus.html#cb1-32" tabindex="-1"></a><span class="st">    ! Variances of exogenous variable</span></span>
+<span id="cb1-33"><a href="introduction-to-mplus.html#cb1-33" tabindex="-1"></a><span class="st">    adverts airplay;</span></span>
+<span id="cb1-34"><a href="introduction-to-mplus.html#cb1-34" tabindex="-1"></a><span class="st">    ! Covariances between exogenous variable</span></span>
+<span id="cb1-35"><a href="introduction-to-mplus.html#cb1-35" tabindex="-1"></a><span class="st">    adverts WITH airplay;</span></span>
+<span id="cb1-36"><a href="introduction-to-mplus.html#cb1-36" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="introduction-to-mplus.html#cb1-37" tabindex="-1"></a><span class="st">! Output command</span></span>
+<span id="cb1-38"><a href="introduction-to-mplus.html#cb1-38" tabindex="-1"></a><span class="st">OUTPUT:</span></span>
+<span id="cb1-39"><a href="introduction-to-mplus.html#cb1-39" tabindex="-1"></a><span class="st">    TECH1 SAMPSTAT STDYX;</span></span>
+<span id="cb1-40"><a href="introduction-to-mplus.html#cb1-40" tabindex="-1"></a><span class="st">    ! TECH1 to understand which parameters are being estimated</span></span>
+<span id="cb1-41"><a href="introduction-to-mplus.html#cb1-41" tabindex="-1"></a><span class="st">    ! SAMPSTAT to check sample descriptive statistics</span></span>
+<span id="cb1-42"><a href="introduction-to-mplus.html#cb1-42" tabindex="-1"></a><span class="st">    ! STDYX to standardize Y (i.e., DV) and X (i.e., IV)</span></span></code></pre></div>
+</div>
+<div id="part-of-the-output-file" class="section level3 hasAnchor" number="2.5.2">
+<h3><span class="header-section-number">2.5.2</span> Part of the output file<a href="introduction-to-mplus.html#part-of-the-output-file" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="introduction-to-mplus.html#cb2-1" tabindex="-1"></a>MODEL RESULTS</span>
+<span id="cb2-2"><a href="introduction-to-mplus.html#cb2-2" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="introduction-to-mplus.html#cb2-3" tabindex="-1"></a>                                                    Two<span class="sc">-</span>Tailed</span>
+<span id="cb2-4"><a href="introduction-to-mplus.html#cb2-4" tabindex="-1"></a>                    Estimate       S.E.  Est.<span class="sc">/</span>S.E.    P<span class="sc">-</span>Value</span>
+<span id="cb2-5"><a href="introduction-to-mplus.html#cb2-5" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="introduction-to-mplus.html#cb2-6" tabindex="-1"></a> SALES    ON</span>
+<span id="cb2-7"><a href="introduction-to-mplus.html#cb2-7" tabindex="-1"></a>    ADVERTS            <span class="fl">0.087</span>      <span class="fl">0.007</span>     <span class="fl">12.082</span>      <span class="fl">0.000</span></span>
+<span id="cb2-8"><a href="introduction-to-mplus.html#cb2-8" tabindex="-1"></a>    AIRPLAY            <span class="fl">3.589</span>      <span class="fl">0.285</span>     <span class="fl">12.608</span>      <span class="fl">0.000</span></span>
+<span id="cb2-9"><a href="introduction-to-mplus.html#cb2-9" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="introduction-to-mplus.html#cb2-10" tabindex="-1"></a> ADVERTS  WITH</span>
+<span id="cb2-11"><a href="introduction-to-mplus.html#cb2-11" tabindex="-1"></a>    AIRPLAY          <span class="fl">604.061</span>    <span class="fl">421.412</span>      <span class="fl">1.433</span>      <span class="fl">0.152</span></span>
+<span id="cb2-12"><a href="introduction-to-mplus.html#cb2-12" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="introduction-to-mplus.html#cb2-13" tabindex="-1"></a> Means</span>
+<span id="cb2-14"><a href="introduction-to-mplus.html#cb2-14" tabindex="-1"></a>    ADVERTS          <span class="fl">614.412</span>     <span class="fl">34.255</span>     <span class="fl">17.936</span>      <span class="fl">0.000</span></span>
+<span id="cb2-15"><a href="introduction-to-mplus.html#cb2-15" tabindex="-1"></a>    AIRPLAY           <span class="fl">27.500</span>      <span class="fl">0.865</span>     <span class="fl">31.777</span>      <span class="fl">0.000</span></span></code></pre></div>
+</div>
+</div>
+<div id="additional-materials" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Additional materials<a href="introduction-to-mplus.html#additional-materials" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><p>Official website at <a href="https://www.statmodel.com/" class="uri">https://www.statmodel.com/</a></p></li>
+<li><p>User’s guide and examples at <a href="https://www.statmodel.com/ugexcerpts.shtml" class="uri">https://www.statmodel.com/ugexcerpts.shtml</a> <br> <span class="math inline">\(\rightarrow\)</span> Highly recommended!</p></li>
+<li><p>Mplus YouTube channel at <a href="https://www.youtube.com/c/MplusVideos" class="uri">https://www.youtube.com/c/MplusVideos</a></p></li>
+<li><p>QuantFish YouTube channel at <a href="https://www.youtube.com/c/QuantFish" class="uri">https://www.youtube.com/c/QuantFish</a></p></li>
+<li><p>Tutorials by Prof. Rens van de Schoot and his students at <a href="https://www.rensvandeschoot.com/tutorials/" class="uri">https://www.rensvandeschoot.com/tutorials/</a></p></li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="path-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["PSY202B-Guest-Part1-I.Heo.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

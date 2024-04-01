@@ -1,7 +1,9 @@
-book_filename: "gitbook-demo"
+book_filename: "PSY202B-Guest-Part1-I.Heo"
 rmd_files: ["index.Rmd",
-            "intro_mplus.Rmd",
-            "references.Rmd"]
+            "mplus.Rmd",
+            "path_analysis.Rmd",
+            "cfa.Rmd",
+            "sem.Rmd"]
 output_dir: "docs"
 language:
   ui:
