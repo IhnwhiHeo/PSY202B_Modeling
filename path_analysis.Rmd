@@ -1,3 +1,72 @@
 # Path Analysis
 
-This Chapter is empty, and only exists to show that you can link to chapters by title.
+## Research scenario
+
+A team of researchers (Charlie, Emily, Aleksandr, Madelin, and Annabella) is interested in understanding the impact of anxiety and distress on hostile behavior. They are thus to conduct a path analysis to examine the interrelationships between the variables. According to the substantive theory, depression (`depress`) is predicted by anxiety (`anxiety`), and hostile behavior (`hostile`) is predicted by depression and distress. So here, depression is a mediating variable between anxiety and hostility. Two exogenous variables are anxiety and distress. Use the `mmpi.csv` dataset.
+
+## Main questions
+
+1. Draw a path diagram.
+
+2. Write Mplus syntax.
+
+```{r, eval=FALSE}
+! Annotate what you are doing in this line
+title: Path analysis
+
+data:
+! Annotate what you are doing in this line
+file is mmpi.csv;
+
+variable:
+! Annotate what you are doing in this line
+names are subid source age sex race slpneed slpget anxiety depress
+hostile posafect senseek totaccpt totsavoid totici tottrust totmach
+totpower totsms aggress impulse harm epixtra epineuro totrathus
+totfaith totcyc totsd tothypo avoid distress;
+
+! Annotate what you are doing in this line
+usevariables are anxiety depress hostile distress;
+
+analysis:
+! Annotate what you are doing in this line
+estimator = ML;
+
+model:
+! Annotate what you are doing in this line
+depress on anxiety;
+
+! Annotate what you are doing in this line
+hostile on depress;
+
+! Annotate what you are doing in this line
+hostile on distress;
+
+! Annotate what you are doing in this line
+anxiety;
+
+! Annotate what you are doing in this line
+distress;
+
+! Annotate what you are doing in this line
+anxiety with distress;
+
+output:
+! Annotate what you are doing in this line
+TECH1;
+
+! Annotate what you are doing in this line
+stdyx;
+
+! Annotate what you are doing in this line
+modindices (all 3.84);
+```
+
+3. Run the analysis and interpret the results.
+
+## Bonus questions
+
+1. Check the model fit. Are there any possibilities of improving model fit? Explore such possibilities using modification indices.
+
+2. Calculate the degrees of freedom by hand. Compare your result with that of Mplus.
+

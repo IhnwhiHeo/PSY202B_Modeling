@@ -3,9 +3,7 @@ bookdown::gitbook:
   config:
     toc:
       before: |
-        <li><a>PSY202B Guest Lecture: Modeling</a></li>
-      after: |
-        <li><a>Published with bookdown</a></li>
+        <li><a href="https://github.com/IhnwhiHeo/PSY202B_Modeling/">PSY202B Statistical Modeling</a></li>
     download: ["pdf"]
 bookdown::pdf_book:
   includes:

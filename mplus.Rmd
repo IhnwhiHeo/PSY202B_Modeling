@@ -18,9 +18,8 @@ Mplus is a statistical modeling program that provides researchers with a flexibl
 
 - Examples of commands? (https://www.youtube.com/watch?v=XeRRtdmu23k)
 
-TITLE, DATA, VARIABLE, ANALYSIS, MODEL, OUTPUT
-
-DEFINE, SAVEDATA, PLOT, MONTECARLO
+   - We will be 'mostly' using TITLE, DATA, VARIABLE, ANALYSIS, MODEL, OUTPUT commands
+   - But we will also be often using DEFINE, SAVEDATA, PLOT, MONTECARLO commands
 
 ## Some tips when programming
 
@@ -44,7 +43,7 @@ DEFINE, SAVEDATA, PLOT, MONTECARLO
 
 3. Care to the degrees of freedom (DF)
 
-## Example. Multiple linear regression using maximum likelihood estimation
+## Example: Multiple linear regression using maximum likelihood estimation
 
 ### Model syntax
 

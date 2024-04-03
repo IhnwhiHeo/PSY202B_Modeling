@@ -1,5 +1,5 @@
 --- 
-title: "[PSY202B Guest Lecture] Statistical Modeling in Psychological Sciences"
+title: "[PSY202B] Statistical Modeling in Psychological Sciences"
 author: "[Ihnwhi Heo, M.Sc.](https://ihnwhiheo.github.io/)"
 date: "Spring 2024"
 description: This GitBook is for guest lectures in PSY202B.
@@ -17,4 +17,8 @@ biblio-style: apalike
 
 Hi everyone! I'm Ihnwhi.
 
-It is my great pleasure to be your guest lecturer for PSY202B. The theme of my lecture is statistical modeling in psychological sciences. An essential aspect of psychological research is statistical modeling based on substantive theories. I will briefly introduce Mplus and walk you around several analytic techniques using Mplus. This GitBook is your guide such that you can easily access code for Mplus practicals. Let's embark on this exciting learning together!
+It is my great pleasure to be your guest lecturer for PSY202B. The theme of my lecture is statistical modeling in psychological sciences.
+
+An essential aspect of psychological research is statistical modeling based on substantive theories. It is thus important to use statistical software for accurate modeling to reach the research conclusion. I will briefly introduce Mplus (Part 1) and HLM (Part 2) and walk you around several analytic techniques using statistical software. This GitBook is your guide such that you can easily access code for Mplus and HLM practicals.
+
+Are you ready? Let's get it on!

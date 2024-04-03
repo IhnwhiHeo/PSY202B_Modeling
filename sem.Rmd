@@ -1,3 +1,72 @@
 # Structural Equation Modeling
 
-This Chapter is empty, and only exists to show that you can link to chapters by title.
+## Research scenario
+
+Based on the findings on the impact of anxiety and distress (Coward et al., 2024) and manipulative behavior (Patel et al., 2024), Ihnwhi is interested in modeling the interrelationships between manipulativeness, anxiety, and distress. In particular, the research aim is to predict being manipulative using anxiety (`anxiety`) and distress (`distress`) via structural equation modeling. For the sake of convenience, you can only use the three following variables to measure manipulativeness: sensation seeking (`senseek`), Machiavellianism (`totmach`), and social monitoring (`totsms`).
+
+## Main questions
+
+1. Draw a path diagram.
+
+2. Write Mplus syntax.
+
+```{r, eval=FALSE}
+! Annotate what you are doing in this line
+title: Structural equation modeling
+
+data:
+! Annotate what you are doing in this line
+file is mmpi.csv;
+
+variable:
+! Annotate what you are doing in this line
+names are subid source age sex race slpneed slpget anxiety depress
+hostile posafect senseek totaccpt totsavoid totici tottrust totmach
+totpower totsms aggress impulse harm epixtra epineuro totrathus
+totfaith totcyc totsd tothypo avoid distress;
+
+! Annotate what you are doing in this line
+usevariables are anxiety senseek totmach totsms distress;
+
+analysis:
+! Annotate what you are doing in this line
+estimator = ML;
+
+model:
+! Annotate what you are doing in this line
+manipulativeness BY senseek totmach totsms;
+
+! Annotate what you are doing in this line
+manipulativeness on anxiety;
+
+! Annotate what you are doing in this line
+manipulativeness on distress;
+
+! Annotate what you are doing in this line
+anxiety;
+
+! Annotate what you are doing in this line
+distress;
+
+! Annotate what you are doing in this line
+anxiety with distress;
+
+output:
+! Annotate what you are doing in this line
+TECH1;
+
+! Annotate what you are doing in this line
+stdyx;
+
+! Annotate what you are doing in this line
+modindices (all 3.84);
+```
+
+3. Run the analysis and interpret the results.
+
+## Bonus questions
+
+1. Check the model fit. Are there any possibilities of improving model fit? Explore such possibilities using modification indices.
+
+2. Can you interpret the TECH1 output given that the model formulation in Mplus is based on the LISREL "all-y" notation?
+
