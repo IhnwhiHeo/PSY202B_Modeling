@@ -59,7 +59,7 @@ TECH1;
 stdyx;
 
 ! Annotate what you are doing in this line
-modindices (all 3.84);
+modindices (3.84);
 ```
 
 3. Run the analysis and interpret the results.
