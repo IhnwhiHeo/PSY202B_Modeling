@@ -1,0 +1,361 @@
+Mplus VERSION 8.7 (Mac)
+MUTHEN & MUTHEN
+04/17/2024  11:02 PM
+
+INPUT INSTRUCTIONS
+
+  ! Annotate what you are doing in this line
+  TITLE: Model with a level-1 predictor
+
+  DATA:
+  	! Annotate what you are doing in this line
+  	file is popular2.dat;
+
+  VARIABLE:
+  	! Annotate what you are doing in this line
+  	names are class pupil cons extrav sex texp popular popteach zextrav
+  	zsex ztexp zpopular zpoptch;
+  	
+  	! Annotate what you are doing in this line
+  	usevariables are extrav popular;
+  	
+  	! Annotate what you are doing in this line
+  	cluster is class;
+  	
+  	! Annotate what you are doing in this line
+  	within are extrav;
+
+  ANALYSIS:
+  	! Annotate what you are doing in this line
+  	type is twolevel;
+  	
+  	! Annotate what you are doing in this line
+  	estimator is MLR;
+
+  MODEL:
+  	! Annotate what you are doing in this line
+  	%within%
+  	popular on extrav;
+
+  	! Annotate what you are doing in this line
+  	%between%
+  	popular;
+
+  OUTPUT:
+  	! Annotate what you are doing in this line
+  	sampstat cinterval;
+
+  SAVEDATA:
+  	! Annotate what you are doing in this line
+  	file is fscores.dat;
+  	
+  	! Annotate what you are doing in this line
+  	save is fscores;
+
+
+
+INPUT READING TERMINATED NORMALLY
+
+
+
+Model with a level-1 predictor
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                        2000
+
+Number of dependent variables                                    1
+Number of independent variables                                  1
+Number of continuous latent variables                            0
+
+Observed dependent variables
+
+  Continuous
+   POPULAR
+
+Observed independent variables
+   EXTRAV
+
+Variables with special functions
+
+  Cluster variable      CLASS
+
+  Within variables
+   EXTRAV
+
+
+Estimator                                                      MLR
+Information matrix                                        OBSERVED
+Maximum number of iterations                                   100
+Convergence criterion                                    0.100D-05
+Maximum number of EM iterations                                500
+Convergence criteria for the EM algorithm
+  Loglikelihood change                                   0.100D-02
+  Relative loglikelihood change                          0.100D-05
+  Derivative                                             0.100D-03
+Minimum variance                                         0.100D-03
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Optimization algorithm                                         EMA
+
+Input data file(s)
+  popular2.dat
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of clusters                        100
+
+     Average cluster size       20.000
+
+     Estimated Intraclass Correlations for the Y Variables
+
+                Intraclass
+     Variable  Correlation
+
+     POPULAR      0.389
+
+
+
+SAMPLE STATISTICS
+
+NOTE:  The sample statistics for within and between refer to the
+       maximum-likelihood estimated within and between covariance
+       matrices, respectively.
+
+
+     ESTIMATED SAMPLE STATISTICS FOR WITHIN
+
+
+           Means
+              POPULAR       EXTRAV
+              ________      ________
+                0.000         5.215
+
+
+           Covariances
+              POPULAR       EXTRAV
+              ________      ________
+ POPULAR        1.306
+ EXTRAV         0.774         1.593
+
+
+           Correlations
+              POPULAR       EXTRAV
+              ________      ________
+ POPULAR        1.000
+ EXTRAV         0.537         1.000
+
+
+     ESTIMATED SAMPLE STATISTICS FOR BETWEEN
+
+
+           Means
+              POPULAR       EXTRAV
+              ________      ________
+                5.078         0.000
+
+
+           Covariances
+              POPULAR       EXTRAV
+              ________      ________
+ POPULAR        0.831
+ EXTRAV         0.000         0.000
+
+
+           Correlations
+              POPULAR       EXTRAV
+              ________      ________
+ POPULAR        1.000
+ EXTRAV         0.000         0.000
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     POPULAR               5.076      -0.049       0.000    0.05%       3.900      4.700      5.100
+            2000.000       1.910      -0.060       9.500    0.05%       5.400      6.300
+     EXTRAV                5.215       0.374       1.000    0.15%       4.000      5.000      5.000
+            2000.000       1.593       0.667      10.000    0.30%       5.000      6.000
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                        4
+
+Loglikelihood
+
+          H0 Value                       -2911.888
+          H0 Scaling Correction Factor      1.1521
+            for MLR
+          H1 Value                       -2911.888
+          H1 Scaling Correction Factor      1.1521
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                    5831.776
+          Bayesian (BIC)                  5854.179
+          Sample-Size Adjusted BIC        5841.471
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                              0.000*
+          Degrees of Freedom                     0
+          P-Value                           0.0000
+          Scaling Correction Factor         1.0000
+            for MLR
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.000
+
+CFI/TLI
+
+          CFI                                1.000
+          TLI                                1.000
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                            418.664
+          Degrees of Freedom                     1
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value for Within                   0.000
+          Value for Between                  0.000
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Within Level
+
+ POPULAR    ON
+    EXTRAV             0.486      0.027     18.300      0.000
+
+ Residual Variances
+    POPULAR            0.930      0.028     33.524      0.000
+
+Between Level
+
+ Means
+    POPULAR            2.543      0.206     12.323      0.000
+
+ Variances
+    POPULAR            0.831      0.126      6.595      0.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.112E-01
+       (ratio of smallest to largest eigenvalue)
+
+
+CONFIDENCE INTERVALS OF MODEL RESULTS
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+Within Level
+
+ POPULAR  ON
+    EXTRAV           0.418       0.434       0.442       0.486       0.530       0.538       0.555
+
+ Residual Variances
+    POPULAR          0.858       0.876       0.884       0.930       0.976       0.984       1.001
+
+Between Level
+
+ Means
+    POPULAR          2.011       2.138       2.203       2.543       2.882       2.947       3.074
+
+ Variances
+    POPULAR          0.507       0.584       0.624       0.831       1.039       1.079       1.156
+
+
+SAMPLE STATISTICS FOR ESTIMATED FACTOR SCORES
+
+
+     SAMPLE STATISTICS
+
+
+           Means
+              B_POPULA      B_POPULA
+              ________      ________
+                2.541         0.210
+
+
+           Covariances
+              B_POPULA      B_POPULA
+              ________      ________
+ B_POPULA       0.777
+ B_POPULA       0.000         0.000
+
+
+           Correlations
+              B_POPULA      B_POPULA
+              ________      ________
+ B_POPULA       1.000
+ B_POPULA       0.020         1.000
+
+
+SAVEDATA INFORMATION
+
+
+  Save file
+    fscores.dat
+
+  Order and format of variables
+
+    POPULAR        F10.3
+    EXTRAV         F10.3
+    B_POPULAR      F10.3
+    B_POPULAR_SE   F10.3
+    CLASS          I4
+
+  Save file format
+    4F10.3 I4
+
+  Save file record length    10000
+
+  Save missing symbol        *
+
+
+     Beginning Time:  23:02:52
+        Ending Time:  23:02:52
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2021 Muthen & Muthen

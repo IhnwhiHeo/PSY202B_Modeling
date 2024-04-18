@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 Structural Equation Modeling | [PSY202B] Statistical Modeling in Psychological Sciences</title>
+  <meta name="description" content="This GitBook is for guest lectures in PSY202B." />
+  <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 Structural Equation Modeling | [PSY202B] Statistical Modeling in Psychological Sciences" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This GitBook is for guest lectures in PSY202B." />
+  <meta name="github-repo" content="ihnwhiheo/gitbook-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 Structural Equation Modeling | [PSY202B] Statistical Modeling in Psychological Sciences" />
+  
+  <meta name="twitter:description" content="This GitBook is for guest lectures in PSY202B." />
+  
+
+<meta name="author" content="Ihnwhi Heo, M.Sc." />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="structural-equation-modeling.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="https://github.com/IhnwhiHeo/PSY202B_Modeling/">PSY202B Statistical Modeling</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="introduction-to-mplus.html"><a href="introduction-to-mplus.html"><i class="fa fa-check"></i><b>2</b> Introduction to Mplus</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introduction-to-mplus.html"><a href="introduction-to-mplus.html#what-is-it-why-called-mplus"><i class="fa fa-check"></i><b>2.1</b> What is it? Why called Mplus?</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction-to-mplus.html"><a href="introduction-to-mplus.html#syntax-based-programming"><i class="fa fa-check"></i><b>2.2</b> Syntax-based programming</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction-to-mplus.html"><a href="introduction-to-mplus.html#some-tips-when-programming"><i class="fa fa-check"></i><b>2.3</b> Some tips when programming</a></li>
+<li class="chapter" data-level="2.4" data-path="introduction-to-mplus.html"><a href="introduction-to-mplus.html#some-tips-about-model-command-particularly"><i class="fa fa-check"></i><b>2.4</b> Some tips about model command particularly</a></li>
+<li class="chapter" data-level="2.5" data-path="introduction-to-mplus.html"><a href="introduction-to-mplus.html#example-multiple-linear-regression-using-maximum-likelihood-estimation"><i class="fa fa-check"></i><b>2.5</b> Example: Multiple linear regression using maximum likelihood estimation</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="introduction-to-mplus.html"><a href="introduction-to-mplus.html#model-syntax"><i class="fa fa-check"></i><b>2.5.1</b> Model syntax</a></li>
+<li class="chapter" data-level="2.5.2" data-path="introduction-to-mplus.html"><a href="introduction-to-mplus.html#part-of-the-output-file"><i class="fa fa-check"></i><b>2.5.2</b> Part of the output file</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="introduction-to-mplus.html"><a href="introduction-to-mplus.html#additional-materials"><i class="fa fa-check"></i><b>2.6</b> Additional materials</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="path-analysis.html"><a href="path-analysis.html"><i class="fa fa-check"></i><b>3</b> Path Analysis</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="path-analysis.html"><a href="path-analysis.html#research-scenario"><i class="fa fa-check"></i><b>3.1</b> Research scenario</a></li>
+<li class="chapter" data-level="3.2" data-path="path-analysis.html"><a href="path-analysis.html#main-questions"><i class="fa fa-check"></i><b>3.2</b> Main questions</a></li>
+<li class="chapter" data-level="3.3" data-path="path-analysis.html"><a href="path-analysis.html#bonus-questions"><i class="fa fa-check"></i><b>3.3</b> Bonus questions</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="confirmatory-factor-analysis.html"><a href="confirmatory-factor-analysis.html"><i class="fa fa-check"></i><b>4</b> Confirmatory Factor Analysis</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="confirmatory-factor-analysis.html"><a href="confirmatory-factor-analysis.html#research-scenario-1"><i class="fa fa-check"></i><b>4.1</b> Research scenario</a></li>
+<li class="chapter" data-level="4.2" data-path="confirmatory-factor-analysis.html"><a href="confirmatory-factor-analysis.html#main-questions-1"><i class="fa fa-check"></i><b>4.2</b> Main questions</a></li>
+<li class="chapter" data-level="4.3" data-path="confirmatory-factor-analysis.html"><a href="confirmatory-factor-analysis.html#bonus-questions-1"><i class="fa fa-check"></i><b>4.3</b> Bonus questions</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="structural-equation-modeling.html"><a href="structural-equation-modeling.html"><i class="fa fa-check"></i><b>5</b> Structural Equation Modeling</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="structural-equation-modeling.html"><a href="structural-equation-modeling.html#research-scenario-2"><i class="fa fa-check"></i><b>5.1</b> Research scenario</a></li>
+<li class="chapter" data-level="5.2" data-path="structural-equation-modeling.html"><a href="structural-equation-modeling.html#main-questions-2"><i class="fa fa-check"></i><b>5.2</b> Main questions</a></li>
+<li class="chapter" data-level="5.3" data-path="structural-equation-modeling.html"><a href="structural-equation-modeling.html#bonus-questions-2"><i class="fa fa-check"></i><b>5.3</b> Bonus questions</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="structural-equation-modeling-1.html"><a href="structural-equation-modeling-1.html"><i class="fa fa-check"></i><b>6</b> Structural Equation Modeling</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="structural-equation-modeling-1.html"><a href="structural-equation-modeling-1.html#building-the-multilevel-regression-model"><i class="fa fa-check"></i><b>6.1</b> Building the multilevel regression model</a></li>
+<li class="chapter" data-level="6.2" data-path="structural-equation-modeling-1.html"><a href="structural-equation-modeling-1.html#main-questions-3"><i class="fa fa-check"></i><b>6.2</b> Main questions</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="structural-equation-modeling-1.html"><a href="structural-equation-modeling-1.html#empty-model-aka.-intercept-only-model"><i class="fa fa-check"></i><b>6.2.1</b> Empty model (aka. intercept-only model)</a></li>
+<li class="chapter" data-level="6.2.2" data-path="structural-equation-modeling-1.html"><a href="structural-equation-modeling-1.html#model-with-a-level-1-predictor"><i class="fa fa-check"></i><b>6.2.2</b> Model with a level-1 predictor</a></li>
+<li class="chapter" data-level="6.2.3" data-path="structural-equation-modeling-1.html"><a href="structural-equation-modeling-1.html#model-with-a-level-2-predictor"><i class="fa fa-check"></i><b>6.2.3</b> Model with a level-2 predictor</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="structural-equation-modeling-1.html"><a href="structural-equation-modeling-1.html#bonus-questions-3"><i class="fa fa-check"></i><b>6.3</b> Bonus questions</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">[PSY202B] Statistical Modeling in Psychological Sciences</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="structural-equation-modeling-1" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Structural Equation Modeling<a href="structural-equation-modeling-1.html#structural-equation-modeling-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="building-the-multilevel-regression-model" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Building the multilevel regression model<a href="structural-equation-modeling-1.html#building-the-multilevel-regression-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Empty model (aka. intercept-only model)</li>
+<li>Model with a level-1 predictor</li>
+<li>Model with a level-2 predictor</li>
+</ul>
+<p>We only consider random intercepts not random slopes.</p>
+<p>On Wednesday, you will build the same three models in HLM software using a different dataset.</p>
+</div>
+<div id="main-questions-3" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Main questions<a href="structural-equation-modeling-1.html#main-questions-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="empty-model-aka.-intercept-only-model" class="section level3 hasAnchor" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> Empty model (aka. intercept-only model)<a href="structural-equation-modeling-1.html#empty-model-aka.-intercept-only-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>Write Mplus syntax.</li>
+</ol>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="structural-equation-modeling-1.html#cb6-1" tabindex="-1"></a><span class="sc">!</span> Annotate what you are doing <span class="cf">in</span> this line</span>
+<span id="cb6-2"><a href="structural-equation-modeling-1.html#cb6-2" tabindex="-1"></a>TITLE<span class="sc">:</span> Empty <span class="fu">model</span> (intercept<span class="sc">-</span>only model)</span>
+<span id="cb6-3"><a href="structural-equation-modeling-1.html#cb6-3" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="structural-equation-modeling-1.html#cb6-4" tabindex="-1"></a>DATA<span class="sc">:</span></span>
+<span id="cb6-5"><a href="structural-equation-modeling-1.html#cb6-5" tabindex="-1"></a>    <span class="sc">!</span> Annotate what you are doing <span class="cf">in</span> this line</span>
+<span id="cb6-6"><a href="structural-equation-modeling-1.html#cb6-6" tabindex="-1"></a>    file is popular2.dat;</span>
+<span id="cb6-7"><a href="structural-equation-modeling-1.html#cb6-7" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="structural-equation-modeling-1.html#cb6-8" tabindex="-1"></a>VARIABLE<span class="sc">:</span></span>
+<span id="cb6-9"><a href="structural-equation-modeling-1.html#cb6-9" tabindex="-1"></a>    <span class="sc">!</span> Annotate what you are doing <span class="cf">in</span> this line</span>
+<span id="cb6-10"><a href="structural-equation-modeling-1.html#cb6-10" tabindex="-1"></a>    names are class pupil cons extrav sex texp popular popteach zextrav</span>
+<span id="cb6-11"><a href="structural-equation-modeling-1.html#cb6-11" tabindex="-1"></a>    zsex ztexp zpopular zpoptch;</span>
+<span id="cb6-12"><a href="structural-equation-modeling-1.html#cb6-12" tabindex="-1"></a>    </span>
+<span id="cb6-13"><a href="structural-equation-modeling-1.html#cb6-13" tabindex="-1"></a>    <span class="sc">!</span> Annotate what you are doing <span class="cf">in</span> this line</span>
+<span id="cb6-14"><a href="structural-equation-modeling-1.html#cb6-14" tabindex="-1"></a>    usevariables are popular;</span>
+<span id="cb6-15"><a href="structural-equation-modeling-1.html#cb6-15" tabindex="-1"></a>    </span>
+<span id="cb6-16"><a href="structural-equation-modeling-1.html#cb6-16" tabindex="-1"></a>    <span class="sc">!</span> Annotate what you are doing <span class="cf">in</span> this line</span>
+<span id="cb6-17"><a href="structural-equation-modeling-1.html#cb6-17" tabindex="-1"></a>    cluster is class;</span>
+<span id="cb6-18"><a href="structural-equation-modeling-1.html#cb6-18" tabindex="-1"></a></span>
+<span id="cb6-19"><a href="structural-equation-modeling-1.html#cb6-19" tabindex="-1"></a>ANALYSIS<span class="sc">:</span></span>
+<span id="cb6-20"><a href="structural-equation-modeling-1.html#cb6-20" tabindex="-1"></a>    <span class="sc">!</span> Annotate what you are doing <span class="cf">in</span> this line</span>
+<span id="cb6-21"><a href="structural-equation-modeling-1.html#cb6-21" tabindex="-1"></a>    type is twolevel;</span>
+<span id="cb6-22"><a href="structural-equation-modeling-1.html#cb6-22" tabindex="-1"></a>    </span>
+<span id="cb6-23"><a href="structural-equation-modeling-1.html#cb6-23" tabindex="-1"></a>    <span class="sc">!</span> Annotate what you are doing <span class="cf">in</span> this line</span>
+<span id="cb6-24"><a href="structural-equation-modeling-1.html#cb6-24" tabindex="-1"></a>    estimator is MLR;</span>
+<span id="cb6-25"><a href="structural-equation-modeling-1.html#cb6-25" tabindex="-1"></a></span>
+<span id="cb6-26"><a href="structural-equation-modeling-1.html#cb6-26" tabindex="-1"></a>MODEL<span class="sc">:</span></span>
+<span id="cb6-27"><a href="structural-equation-modeling-1.html#cb6-27" tabindex="-1"></a>    <span class="sc">!</span> Annotate what you are doing <span class="cf">in</span> this line</span>
+<span id="cb6-28"><a href="structural-equation-modeling-1.html#cb6-28" tabindex="-1"></a>    <span class="sc">%within%</span></span>
+<span id="cb6-29"><a href="structural-equation-modeling-1.html#cb6-29" tabindex="-1"></a></span>
+<span id="cb6-30"><a href="structural-equation-modeling-1.html#cb6-30" tabindex="-1"></a>    <span class="sc">!</span> Annotate what you are doing <span class="cf">in</span> this line</span>
+<span id="cb6-31"><a href="structural-equation-modeling-1.html#cb6-31" tabindex="-1"></a>    <span class="sc">%between%</span></span>
+<span id="cb6-32"><a href="structural-equation-modeling-1.html#cb6-32" tabindex="-1"></a></span>
+<span id="cb6-33"><a href="structural-equation-modeling-1.html#cb6-33" tabindex="-1"></a>OUTPUT<span class="sc">:</span></span>
+<span id="cb6-34"><a href="structural-equation-modeling-1.html#cb6-34" tabindex="-1"></a>    <span class="sc">!</span> Annotate what you are doing <span class="cf">in</span> this line</span>
+<span id="cb6-35"><a href="structural-equation-modeling-1.html#cb6-35" tabindex="-1"></a>    sampstat cinterval;</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Run the analysis and interpret the results.</p></li>
+<li><p>Can you match the parameter estimates to the notation in the formula below?</p></li>
+<li><p>Can you compute the ICC?</p></li>
+</ol>
+</div>
+<div id="model-with-a-level-1-predictor" class="section level3 hasAnchor" number="6.2.2">
+<h3><span class="header-section-number">6.2.2</span> Model with a level-1 predictor<a href="structural-equation-modeling-1.html#model-with-a-level-1-predictor" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>Write Mplus syntax.</li>
+</ol>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="structural-equation-modeling-1.html#cb7-1" tabindex="-1"></a><span class="sc">!</span> Annotate what you are doing <span class="cf">in</span> this line</span>
+<span id="cb7-2"><a href="structural-equation-modeling-1.html#cb7-2" tabindex="-1"></a>TITLE<span class="sc">:</span> Model with a level<span class="dv">-1</span> predictor</span>
+<span id="cb7-3"><a href="structural-equation-modeling-1.html#cb7-3" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="structural-equation-modeling-1.html#cb7-4" tabindex="-1"></a>DATA<span class="sc">:</span></span>
+<span id="cb7-5"><a href="structural-equation-modeling-1.html#cb7-5" tabindex="-1"></a>    <span class="sc">!</span> Annotate what you are doing <span class="cf">in</span> this line</span>
+<span id="cb7-6"><a href="structural-equation-modeling-1.html#cb7-6" tabindex="-1"></a>    file is popular2.dat;</span>
+<span id="cb7-7"><a href="structural-equation-modeling-1.html#cb7-7" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="structural-equation-modeling-1.html#cb7-8" tabindex="-1"></a>VARIABLE<span class="sc">:</span></span>
+<span id="cb7-9"><a href="structural-equation-modeling-1.html#cb7-9" tabindex="-1"></a>    <span class="sc">!</span> Annotate what you are doing <span class="cf">in</span> this line</span>
+<span id="cb7-10"><a href="structural-equation-modeling-1.html#cb7-10" tabindex="-1"></a>    names are class pupil cons extrav sex texp popular popteach zextrav</span>
+<span id="cb7-11"><a href="structural-equation-modeling-1.html#cb7-11" tabindex="-1"></a>    zsex ztexp zpopular zpoptch;</span>
+<span id="cb7-12"><a href="structural-equation-modeling-1.html#cb7-12" tabindex="-1"></a>    </span>
+<span id="cb7-13"><a href="structural-equation-modeling-1.html#cb7-13" tabindex="-1"></a>    <span class="sc">!</span> Annotate what you are doing <span class="cf">in</span> this line</span>
+<span id="cb7-14"><a href="structural-equation-modeling-1.html#cb7-14" tabindex="-1"></a>    usevariables are extrav popular;</span>
+<span id="cb7-15"><a href="structural-equation-modeling-1.html#cb7-15" tabindex="-1"></a>    </span>
+<span id="cb7-16"><a href="structural-equation-modeling-1.html#cb7-16" tabindex="-1"></a>    <span class="sc">!</span> Annotate what you are doing <span class="cf">in</span> this line</span>
+<span id="cb7-17"><a href="structural-equation-modeling-1.html#cb7-17" tabindex="-1"></a>    cluster is class;</span>
+<span id="cb7-18"><a href="structural-equation-modeling-1.html#cb7-18" tabindex="-1"></a>    </span>
+<span id="cb7-19"><a href="structural-equation-modeling-1.html#cb7-19" tabindex="-1"></a>    <span class="sc">!</span> Annotate what you are doing <span class="cf">in</span> this line</span>
+<span id="cb7-20"><a href="structural-equation-modeling-1.html#cb7-20" tabindex="-1"></a>    within are extrav;</span>
+<span id="cb7-21"><a href="structural-equation-modeling-1.html#cb7-21" tabindex="-1"></a></span>
+<span id="cb7-22"><a href="structural-equation-modeling-1.html#cb7-22" tabindex="-1"></a>ANALYSIS<span class="sc">:</span></span>
+<span id="cb7-23"><a href="structural-equation-modeling-1.html#cb7-23" tabindex="-1"></a>    <span class="sc">!</span> Annotate what you are doing <span class="cf">in</span> this line</span>
+<span id="cb7-24"><a href="structural-equation-modeling-1.html#cb7-24" tabindex="-1"></a>    type is twolevel;</span>
+<span id="cb7-25"><a href="structural-equation-modeling-1.html#cb7-25" tabindex="-1"></a>    </span>
+<span id="cb7-26"><a href="structural-equation-modeling-1.html#cb7-26" tabindex="-1"></a>    <span class="sc">!</span> Annotate what you are doing <span class="cf">in</span> this line</span>
+<span id="cb7-27"><a href="structural-equation-modeling-1.html#cb7-27" tabindex="-1"></a>    estimator is MLR;</span>
+<span id="cb7-28"><a href="structural-equation-modeling-1.html#cb7-28" tabindex="-1"></a></span>
+<span id="cb7-29"><a href="structural-equation-modeling-1.html#cb7-29" tabindex="-1"></a>MODEL<span class="sc">:</span></span>
+<span id="cb7-30"><a href="structural-equation-modeling-1.html#cb7-30" tabindex="-1"></a>    <span class="sc">!</span> Annotate what you are doing <span class="cf">in</span> this line</span>
+<span id="cb7-31"><a href="structural-equation-modeling-1.html#cb7-31" tabindex="-1"></a>    <span class="sc">%within%</span></span>
+<span id="cb7-32"><a href="structural-equation-modeling-1.html#cb7-32" tabindex="-1"></a>    popular on extrav;</span>
+<span id="cb7-33"><a href="structural-equation-modeling-1.html#cb7-33" tabindex="-1"></a></span>
+<span id="cb7-34"><a href="structural-equation-modeling-1.html#cb7-34" tabindex="-1"></a>    <span class="sc">!</span> Annotate what you are doing <span class="cf">in</span> this line</span>
+<span id="cb7-35"><a href="structural-equation-modeling-1.html#cb7-35" tabindex="-1"></a>    <span class="sc">%between%</span></span>
+<span id="cb7-36"><a href="structural-equation-modeling-1.html#cb7-36" tabindex="-1"></a>    popular;</span>
+<span id="cb7-37"><a href="structural-equation-modeling-1.html#cb7-37" tabindex="-1"></a></span>
+<span id="cb7-38"><a href="structural-equation-modeling-1.html#cb7-38" tabindex="-1"></a>OUTPUT<span class="sc">:</span></span>
+<span id="cb7-39"><a href="structural-equation-modeling-1.html#cb7-39" tabindex="-1"></a>    <span class="sc">!</span> Annotate what you are doing <span class="cf">in</span> this line</span>
+<span id="cb7-40"><a href="structural-equation-modeling-1.html#cb7-40" tabindex="-1"></a>    sampstat cinterval;</span>
+<span id="cb7-41"><a href="structural-equation-modeling-1.html#cb7-41" tabindex="-1"></a></span>
+<span id="cb7-42"><a href="structural-equation-modeling-1.html#cb7-42" tabindex="-1"></a>SAVEDATA<span class="sc">:</span></span>
+<span id="cb7-43"><a href="structural-equation-modeling-1.html#cb7-43" tabindex="-1"></a>    <span class="sc">!</span> Annotate what you are doing <span class="cf">in</span> this line</span>
+<span id="cb7-44"><a href="structural-equation-modeling-1.html#cb7-44" tabindex="-1"></a>    file is fscores.dat;</span>
+<span id="cb7-45"><a href="structural-equation-modeling-1.html#cb7-45" tabindex="-1"></a>    </span>
+<span id="cb7-46"><a href="structural-equation-modeling-1.html#cb7-46" tabindex="-1"></a>    <span class="sc">!</span> Annotate what you are doing <span class="cf">in</span> this line</span>
+<span id="cb7-47"><a href="structural-equation-modeling-1.html#cb7-47" tabindex="-1"></a>    save is fscores;</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Run the analysis and interpret the results.</p></li>
+<li><p>Can you match the parameter estimates to the notation in the formula below?</p></li>
+<li><p>Can you compute the ICC?</p></li>
+</ol>
+</div>
+<div id="model-with-a-level-2-predictor" class="section level3 hasAnchor" number="6.2.3">
+<h3><span class="header-section-number">6.2.3</span> Model with a level-2 predictor<a href="structural-equation-modeling-1.html#model-with-a-level-2-predictor" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>Write Mplus syntax.</li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="structural-equation-modeling-1.html#cb8-1" tabindex="-1"></a><span class="sc">!</span> Annotate what you are doing <span class="cf">in</span> this line</span>
+<span id="cb8-2"><a href="structural-equation-modeling-1.html#cb8-2" tabindex="-1"></a>TITLE<span class="sc">:</span> Model with a level<span class="dv">-2</span> predictor</span>
+<span id="cb8-3"><a href="structural-equation-modeling-1.html#cb8-3" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="structural-equation-modeling-1.html#cb8-4" tabindex="-1"></a>DATA<span class="sc">:</span></span>
+<span id="cb8-5"><a href="structural-equation-modeling-1.html#cb8-5" tabindex="-1"></a>    <span class="sc">!</span> Annotate what you are doing <span class="cf">in</span> this line</span>
+<span id="cb8-6"><a href="structural-equation-modeling-1.html#cb8-6" tabindex="-1"></a>    file is popular2.dat;</span>
+<span id="cb8-7"><a href="structural-equation-modeling-1.html#cb8-7" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="structural-equation-modeling-1.html#cb8-8" tabindex="-1"></a>VARIABLE<span class="sc">:</span></span>
+<span id="cb8-9"><a href="structural-equation-modeling-1.html#cb8-9" tabindex="-1"></a>    <span class="sc">!</span> Annotate what you are doing <span class="cf">in</span> this line</span>
+<span id="cb8-10"><a href="structural-equation-modeling-1.html#cb8-10" tabindex="-1"></a>    names are class pupil cons extrav sex texp popular popteach zextrav</span>
+<span id="cb8-11"><a href="structural-equation-modeling-1.html#cb8-11" tabindex="-1"></a>    zsex ztexp zpopular zpoptch;</span>
+<span id="cb8-12"><a href="structural-equation-modeling-1.html#cb8-12" tabindex="-1"></a>    </span>
+<span id="cb8-13"><a href="structural-equation-modeling-1.html#cb8-13" tabindex="-1"></a>    <span class="sc">!</span> Annotate what you are doing <span class="cf">in</span> this line</span>
+<span id="cb8-14"><a href="structural-equation-modeling-1.html#cb8-14" tabindex="-1"></a>    usevariables are texp popular;</span>
+<span id="cb8-15"><a href="structural-equation-modeling-1.html#cb8-15" tabindex="-1"></a>    </span>
+<span id="cb8-16"><a href="structural-equation-modeling-1.html#cb8-16" tabindex="-1"></a>    <span class="sc">!</span> Annotate what you are doing <span class="cf">in</span> this line</span>
+<span id="cb8-17"><a href="structural-equation-modeling-1.html#cb8-17" tabindex="-1"></a>    cluster is class;</span>
+<span id="cb8-18"><a href="structural-equation-modeling-1.html#cb8-18" tabindex="-1"></a>    </span>
+<span id="cb8-19"><a href="structural-equation-modeling-1.html#cb8-19" tabindex="-1"></a>    <span class="sc">!</span> Annotate what you are doing <span class="cf">in</span> this line</span>
+<span id="cb8-20"><a href="structural-equation-modeling-1.html#cb8-20" tabindex="-1"></a>    between are texp;</span>
+<span id="cb8-21"><a href="structural-equation-modeling-1.html#cb8-21" tabindex="-1"></a></span>
+<span id="cb8-22"><a href="structural-equation-modeling-1.html#cb8-22" tabindex="-1"></a>ANALYSIS<span class="sc">:</span></span>
+<span id="cb8-23"><a href="structural-equation-modeling-1.html#cb8-23" tabindex="-1"></a>    <span class="sc">!</span> Annotate what you are doing <span class="cf">in</span> this line</span>
+<span id="cb8-24"><a href="structural-equation-modeling-1.html#cb8-24" tabindex="-1"></a>    type is twolevel;</span>
+<span id="cb8-25"><a href="structural-equation-modeling-1.html#cb8-25" tabindex="-1"></a>    </span>
+<span id="cb8-26"><a href="structural-equation-modeling-1.html#cb8-26" tabindex="-1"></a>    <span class="sc">!</span> Annotate what you are doing <span class="cf">in</span> this line</span>
+<span id="cb8-27"><a href="structural-equation-modeling-1.html#cb8-27" tabindex="-1"></a>    estimator is MLR;</span>
+<span id="cb8-28"><a href="structural-equation-modeling-1.html#cb8-28" tabindex="-1"></a></span>
+<span id="cb8-29"><a href="structural-equation-modeling-1.html#cb8-29" tabindex="-1"></a>MODEL<span class="sc">:</span></span>
+<span id="cb8-30"><a href="structural-equation-modeling-1.html#cb8-30" tabindex="-1"></a>    <span class="sc">!</span> Annotate what you are doing <span class="cf">in</span> this line</span>
+<span id="cb8-31"><a href="structural-equation-modeling-1.html#cb8-31" tabindex="-1"></a>    <span class="sc">%within%</span></span>
+<span id="cb8-32"><a href="structural-equation-modeling-1.html#cb8-32" tabindex="-1"></a>    popular;</span>
+<span id="cb8-33"><a href="structural-equation-modeling-1.html#cb8-33" tabindex="-1"></a></span>
+<span id="cb8-34"><a href="structural-equation-modeling-1.html#cb8-34" tabindex="-1"></a>    <span class="sc">!</span> Annotate what you are doing <span class="cf">in</span> this line</span>
+<span id="cb8-35"><a href="structural-equation-modeling-1.html#cb8-35" tabindex="-1"></a>    <span class="sc">%between%</span></span>
+<span id="cb8-36"><a href="structural-equation-modeling-1.html#cb8-36" tabindex="-1"></a>    popular on texp;</span>
+<span id="cb8-37"><a href="structural-equation-modeling-1.html#cb8-37" tabindex="-1"></a></span>
+<span id="cb8-38"><a href="structural-equation-modeling-1.html#cb8-38" tabindex="-1"></a>OUTPUT<span class="sc">:</span></span>
+<span id="cb8-39"><a href="structural-equation-modeling-1.html#cb8-39" tabindex="-1"></a>    <span class="sc">!</span> Annotate what you are doing <span class="cf">in</span> this line</span>
+<span id="cb8-40"><a href="structural-equation-modeling-1.html#cb8-40" tabindex="-1"></a>    sampstat cinterval;</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Run the analysis and interpret the results.</p></li>
+<li><p>Can you match the parameter estimates to the notation in the formula below?</p></li>
+<li><p>Can you compute the ICC?</p></li>
+</ol>
+</div>
+</div>
+<div id="bonus-questions-3" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Bonus questions<a href="structural-equation-modeling-1.html#bonus-questions-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>Can you visualize the results of multilevel modeling? Let’s practice with the model with a level-1 predictor that we fitted.</li>
+</ol>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="structural-equation-modeling-1.html#cb9-1" tabindex="-1"></a><span class="co"># Clean the work space</span></span>
+<span id="cb9-2"><a href="structural-equation-modeling-1.html#cb9-2" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>()); <span class="fu">gc</span>()</span></code></pre></div>
+<pre><code>##          used (Mb) gc trigger (Mb) limit (Mb) max used (Mb)
+## Ncells 530657 28.4    1181612 63.2         NA   669100 35.8
+## Vcells 946294  7.3    8388608 64.0      16384  1839720 14.1</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="structural-equation-modeling-1.html#cb11-1" tabindex="-1"></a><span class="co"># Load required packages</span></span>
+<span id="cb11-2"><a href="structural-equation-modeling-1.html#cb11-2" tabindex="-1"></a><span class="fu">library</span>(MplusAutomation)</span></code></pre></div>
+<pre><code>## Version:  1.1.0
+## We work hard to write this free software. Please help us get credit by citing: 
+## 
+## Hallquist, M. N. &amp; Wiley, J. F. (2018). MplusAutomation: An R Package for Facilitating Large-Scale Latent Variable Analyses in Mplus. Structural Equation Modeling, 25, 621-638. doi: 10.1080/10705511.2017.1402334.
+## 
+## -- see citation(&quot;MplusAutomation&quot;).</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="structural-equation-modeling-1.html#cb13-1" tabindex="-1"></a><span class="fu">library</span>(texreg)</span></code></pre></div>
+<pre><code>## Version:  1.38.6
+## Date:     2022-04-06
+## Author:   Philip Leifeld (University of Essex)
+## 
+## Consider submitting praise using the praise or praise_interactive functions.
+## Please cite the JSS article in your publications -- see citation(&quot;texreg&quot;).</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="structural-equation-modeling-1.html#cb15-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb15-2"><a href="structural-equation-modeling-1.html#cb15-2" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="structural-equation-modeling-1.html#cb15-3" tabindex="-1"></a><span class="co"># Extract fscores</span></span>
+<span id="cb15-4"><a href="structural-equation-modeling-1.html#cb15-4" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">readModels</span>(<span class="st">&quot;2. Model with a l1 pred.out&quot;</span>, <span class="at">recursive =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb15-5"><a href="structural-equation-modeling-1.html#cb15-5" tabindex="-1"></a>                  <span class="at">what =</span> <span class="st">&quot;savedata&quot;</span>)</span>
+<span id="cb15-6"><a href="structural-equation-modeling-1.html#cb15-6" tabindex="-1"></a>fscores <span class="ot">&lt;-</span> out<span class="sc">$</span>savedata</span>
+<span id="cb15-7"><a href="structural-equation-modeling-1.html#cb15-7" tabindex="-1"></a>fscores_classid <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(fscores[,<span class="dv">3</span><span class="sc">:</span><span class="dv">4</span>], <span class="fu">list</span>(fscores<span class="sc">$</span>CLASS), mean)</span>
+<span id="cb15-8"><a href="structural-equation-modeling-1.html#cb15-8" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="structural-equation-modeling-1.html#cb15-9" tabindex="-1"></a><span class="co"># Check the range of the predictor</span></span>
+<span id="cb15-10"><a href="structural-equation-modeling-1.html#cb15-10" tabindex="-1"></a><span class="fu">range</span>(fscores<span class="sc">$</span>EXTRAV) <span class="co"># 1 to 10</span></span></code></pre></div>
+<pre><code>## [1]  1 10</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="structural-equation-modeling-1.html#cb17-1" tabindex="-1"></a><span class="co"># Find predicted values for each level of extraversion</span></span>
+<span id="cb17-2"><a href="structural-equation-modeling-1.html#cb17-2" tabindex="-1"></a>pred_popular_classid <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(fscores_classid[<span class="fu">rep</span>(<span class="fu">seq</span>(<span class="fu">nrow</span>(fscores_classid)),</span>
+<span id="cb17-3"><a href="structural-equation-modeling-1.html#cb17-3" tabindex="-1"></a>                                                       <span class="at">each =</span> <span class="dv">10</span>),],</span>
+<span id="cb17-4"><a href="structural-equation-modeling-1.html#cb17-4" tabindex="-1"></a>                                   <span class="st">&quot;extraversion&quot;</span> <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span>
+<span id="cb17-5"><a href="structural-equation-modeling-1.html#cb17-5" tabindex="-1"></a>pred_popular <span class="ot">&lt;-</span> pred_popular_classid<span class="sc">$</span>B_POPULAR <span class="sc">+</span> <span class="fl">0.486</span> <span class="sc">*</span> pred_popular_classid<span class="sc">$</span>extraversion</span>
+<span id="cb17-6"><a href="structural-equation-modeling-1.html#cb17-6" tabindex="-1"></a>pred_popular_classid <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(pred_popular_classid, pred_popular)</span>
+<span id="cb17-7"><a href="structural-equation-modeling-1.html#cb17-7" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="structural-equation-modeling-1.html#cb17-8" tabindex="-1"></a><span class="co"># Visualization</span></span>
+<span id="cb17-9"><a href="structural-equation-modeling-1.html#cb17-9" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> pred_popular_classid, <span class="fu">aes</span>(<span class="at">x =</span> extraversion, <span class="at">y =</span> pred_popular, <span class="at">group =</span> Group<span class="fl">.1</span>)) <span class="sc">+</span></span>
+<span id="cb17-10"><a href="structural-equation-modeling-1.html#cb17-10" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> Group<span class="fl">.1</span>), <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb17-11"><a href="structural-equation-modeling-1.html#cb17-11" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Extraversion&quot;</span>,</span>
+<span id="cb17-12"><a href="structural-equation-modeling-1.html#cb17-12" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Popularity&quot;</span>) <span class="sc">+</span></span>
+<span id="cb17-13"><a href="structural-equation-modeling-1.html#cb17-13" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">lim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">10</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="at">by =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb17-14"><a href="structural-equation-modeling-1.html#cb17-14" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">lim =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">10</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="at">by =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb17-15"><a href="structural-equation-modeling-1.html#cb17-15" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
+<p><img src="PSY202B-Modeling-I.Heo_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<ol start="2" style="list-style-type: decimal">
+<li>How can you interpret the plot?</li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="structural-equation-modeling.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["PSY202B-Modeling-I.Heo.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

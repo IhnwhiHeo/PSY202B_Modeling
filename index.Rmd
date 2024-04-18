@@ -19,6 +19,7 @@ Hi everyone! I'm Ihnwhi.
 
 It is my great pleasure to be your guest lecturer for PSY202B. The theme of my lecture is statistical modeling in psychological sciences.
 
-An essential aspect of psychological research is statistical modeling based on substantive theories. It is thus important to use statistical software for accurate modeling to reach the research conclusion. I will briefly introduce Mplus (Part 1) and HLM (Part 2) and walk you around several analytic techniques using statistical software. This GitBook is your guide such that you can easily access code for Mplus and HLM practicals.
+An essential aspect of psychological research is statistical modeling based on substantive theories. It is thus important to use statistical software for accurate modeling to reach the research conclusion. I will briefly introduce Mplus and walk you around such analytic techniques as regression analysis, path analysis, confirmatory factor analysis, structural equation modeling (Part 1), and multilevel modeling (Part 2). This GitBook is your guide such that you can easily access code for Mplus.
 
 Are you ready? Let's get it on!
+

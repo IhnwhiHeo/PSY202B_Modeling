@@ -1,0 +1,216 @@
+# Structural Equation Modeling
+
+## Building the multilevel regression model
+
+- Empty model (aka. intercept-only model)
+- Model with a level-1 predictor
+- Model with a level-2 predictor
+
+We only consider random intercepts not random slopes.
+
+On Wednesday, you will build the same three models in HLM software using a different dataset.
+
+## Main questions
+
+### Empty model (aka. intercept-only model)
+
+1. Write Mplus syntax.
+
+```{r, eval=FALSE}
+! Annotate what you are doing in this line
+TITLE: Empty model (intercept-only model)
+
+DATA:
+	! Annotate what you are doing in this line
+	file is popular2.dat;
+
+VARIABLE:
+	! Annotate what you are doing in this line
+	names are class pupil cons extrav sex texp popular popteach zextrav
+	zsex ztexp zpopular zpoptch;
+	
+	! Annotate what you are doing in this line
+	usevariables are popular;
+	
+	! Annotate what you are doing in this line
+	cluster is class;
+
+ANALYSIS:
+	! Annotate what you are doing in this line
+	type is twolevel;
+	
+	! Annotate what you are doing in this line
+	estimator is MLR;
+
+MODEL:
+	! Annotate what you are doing in this line
+	%within%
+
+	! Annotate what you are doing in this line
+	%between%
+
+OUTPUT:
+	! Annotate what you are doing in this line
+	sampstat cinterval;
+```
+
+2. Run the analysis and interpret the results.
+
+3. Can you match the parameter estimates to the notation in the formula below?
+
+4. Can you compute the ICC?
+
+### Model with a level-1 predictor
+
+1. Write Mplus syntax.
+
+```{r, eval=FALSE}
+! Annotate what you are doing in this line
+TITLE: Model with a level-1 predictor
+
+DATA:
+	! Annotate what you are doing in this line
+	file is popular2.dat;
+
+VARIABLE:
+	! Annotate what you are doing in this line
+	names are class pupil cons extrav sex texp popular popteach zextrav
+	zsex ztexp zpopular zpoptch;
+	
+	! Annotate what you are doing in this line
+	usevariables are extrav popular;
+	
+	! Annotate what you are doing in this line
+	cluster is class;
+	
+	! Annotate what you are doing in this line
+	within are extrav;
+
+ANALYSIS:
+	! Annotate what you are doing in this line
+	type is twolevel;
+	
+	! Annotate what you are doing in this line
+	estimator is MLR;
+
+MODEL:
+	! Annotate what you are doing in this line
+	%within%
+	popular on extrav;
+
+	! Annotate what you are doing in this line
+	%between%
+	popular;
+
+OUTPUT:
+	! Annotate what you are doing in this line
+	sampstat cinterval;
+
+SAVEDATA:
+	! Annotate what you are doing in this line
+	file is fscores.dat;
+	
+	! Annotate what you are doing in this line
+	save is fscores;
+```
+
+2. Run the analysis and interpret the results.
+
+3. Can you match the parameter estimates to the notation in the formula below?
+
+4. Can you compute the ICC?
+
+### Model with a level-2 predictor
+
+1. Write Mplus syntax.
+
+```{r, eval=FALSE}
+! Annotate what you are doing in this line
+TITLE: Model with a level-2 predictor
+
+DATA:
+	! Annotate what you are doing in this line
+	file is popular2.dat;
+
+VARIABLE:
+	! Annotate what you are doing in this line
+	names are class pupil cons extrav sex texp popular popteach zextrav
+	zsex ztexp zpopular zpoptch;
+	
+	! Annotate what you are doing in this line
+	usevariables are texp popular;
+	
+	! Annotate what you are doing in this line
+	cluster is class;
+	
+	! Annotate what you are doing in this line
+	between are texp;
+
+ANALYSIS:
+	! Annotate what you are doing in this line
+	type is twolevel;
+	
+	! Annotate what you are doing in this line
+	estimator is MLR;
+
+MODEL:
+	! Annotate what you are doing in this line
+	%within%
+	popular;
+
+	! Annotate what you are doing in this line
+	%between%
+	popular on texp;
+
+OUTPUT:
+	! Annotate what you are doing in this line
+	sampstat cinterval;
+```
+
+2. Run the analysis and interpret the results.
+
+3. Can you match the parameter estimates to the notation in the formula below?
+
+4. Can you compute the ICC?
+
+## Bonus questions
+
+1. Can you visualize the results of multilevel modeling? Let's practice with the model with a level-1 predictor that we fitted.
+
+```{r}
+# Clean the work space
+rm(list=ls()); gc()
+
+# Load required packages
+library(MplusAutomation)
+library(texreg)
+library(ggplot2)
+
+# Extract fscores
+out <- readModels("2. Model with a l1 pred.out", recursive = FALSE, 
+                  what = "savedata")
+fscores <- out$savedata
+fscores_classid <- aggregate(fscores[,3:4], list(fscores$CLASS), mean)
+
+# Check the range of the predictor
+range(fscores$EXTRAV) # 1 to 10
+
+# Find predicted values for each level of extraversion
+pred_popular_classid <- data.frame(fscores_classid[rep(seq(nrow(fscores_classid)),
+                                                       each = 10),],
+                                   "extraversion" = 1:10)
+pred_popular <- pred_popular_classid$B_POPULAR + 0.486 * pred_popular_classid$extraversion
+pred_popular_classid <- data.frame(pred_popular_classid, pred_popular)
+
+# Visualization
+ggplot(data = pred_popular_classid, aes(x = extraversion, y = pred_popular, group = Group.1)) +
+  geom_line(aes(color = Group.1), show.legend = FALSE) +
+  labs(x = "Extraversion",
+       y = "Popularity") +
+  scale_y_continuous(lim = c(0, 10), breaks = seq(0, 10, by = 1)) +
+  scale_x_continuous(lim = c(1, 10), breaks = seq(1, 10, by = 1)) +
+  theme_bw()
+```
+
+2. How can you interpret the plot?
+

@@ -3,7 +3,8 @@ rmd_files: ["index.Rmd",
             "mplus.Rmd",
             "path_analysis.Rmd",
             "cfa.Rmd",
-            "sem.Rmd"]
+            "sem.Rmd",
+            "mlm.Rmd"]
 output_dir: "docs"
 language:
   ui:

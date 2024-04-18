@@ -143,7 +143,7 @@ Hi everyone! I'm Ihnwhi.
 
 It is my great pleasure to be your guest lecturer for PSY202B. The theme of my lecture is statistical modeling in psychological sciences.
 
-An essential aspect of psychological research is statistical modeling based on substantive theories. It is thus important to use statistical software for accurate modeling to reach the research conclusion. I will briefly introduce Mplus (Part 1) and HLM (Part 2) and walk you around several analytic techniques using statistical software. This GitBook is your guide such that you can easily access code for Mplus and HLM practicals.
+An essential aspect of psychological research is statistical modeling based on substantive theories. It is thus important to use statistical software for accurate modeling to reach the research conclusion. I will briefly introduce Mplus and walk you around such analytic techniques as regression analysis, path analysis, confirmatory factor analysis, structural equation modeling (Part 1), and multilevel modeling (Part 2). This GitBook is your guide such that you can easily access code for Mplus.
 
 Are you ready? Let's get it on!
 
@@ -569,6 +569,332 @@ Based on the findings on the impact of anxiety and distress (Coward et al., 2024
   Check the model fit. Are there any possibilities of improving model fit? Explore such possibilities using modification indices.
 \item
   Can you interpret the TECH1 output given that the model formulation in Mplus is based on the LISREL ``all-y'' notation?
+\end{enumerate}
+
+\hypertarget{structural-equation-modeling-1}{%
+\chapter{Structural Equation Modeling}\label{structural-equation-modeling-1}}
+
+\hypertarget{building-the-multilevel-regression-model}{%
+\section{Building the multilevel regression model}\label{building-the-multilevel-regression-model}}
+
+\begin{itemize}
+\tightlist
+\item
+  Empty model (aka. intercept-only model)
+\item
+  Model with a level-1 predictor
+\item
+  Model with a level-2 predictor
+\end{itemize}
+
+We only consider random intercepts not random slopes.
+
+On Wednesday, you will build the same three models in HLM software using a different dataset.
+
+\hypertarget{main-questions-3}{%
+\section{Main questions}\label{main-questions-3}}
+
+\hypertarget{empty-model-aka.-intercept-only-model}{%
+\subsection{Empty model (aka. intercept-only model)}\label{empty-model-aka.-intercept-only-model}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Write Mplus syntax.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
+\NormalTok{TITLE}\SpecialCharTok{:}\NormalTok{ Empty }\FunctionTok{model}\NormalTok{ (intercept}\SpecialCharTok{{-}}\NormalTok{only model)}
+
+\NormalTok{DATA}\SpecialCharTok{:}
+    \SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
+\NormalTok{    file is popular2.dat;}
+
+\NormalTok{VARIABLE}\SpecialCharTok{:}
+    \SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
+\NormalTok{    names are class pupil cons extrav sex texp popular popteach zextrav}
+\NormalTok{    zsex ztexp zpopular zpoptch;}
+    
+    \SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
+\NormalTok{    usevariables are popular;}
+    
+    \SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
+\NormalTok{    cluster is class;}
+
+\NormalTok{ANALYSIS}\SpecialCharTok{:}
+    \SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
+\NormalTok{    type is twolevel;}
+    
+    \SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
+\NormalTok{    estimator is MLR;}
+
+\NormalTok{MODEL}\SpecialCharTok{:}
+    \SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
+    \SpecialCharTok{\%within\%}
+
+    \SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
+    \SpecialCharTok{\%between\%}
+
+\NormalTok{OUTPUT}\SpecialCharTok{:}
+    \SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
+\NormalTok{    sampstat cinterval;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  Run the analysis and interpret the results.
+\item
+  Can you match the parameter estimates to the notation in the formula below?
+\item
+  Can you compute the ICC?
+\end{enumerate}
+
+\hypertarget{model-with-a-level-1-predictor}{%
+\subsection{Model with a level-1 predictor}\label{model-with-a-level-1-predictor}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Write Mplus syntax.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
+\NormalTok{TITLE}\SpecialCharTok{:}\NormalTok{ Model with a level}\DecValTok{{-}1}\NormalTok{ predictor}
+
+\NormalTok{DATA}\SpecialCharTok{:}
+    \SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
+\NormalTok{    file is popular2.dat;}
+
+\NormalTok{VARIABLE}\SpecialCharTok{:}
+    \SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
+\NormalTok{    names are class pupil cons extrav sex texp popular popteach zextrav}
+\NormalTok{    zsex ztexp zpopular zpoptch;}
+    
+    \SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
+\NormalTok{    usevariables are extrav popular;}
+    
+    \SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
+\NormalTok{    cluster is class;}
+    
+    \SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
+\NormalTok{    within are extrav;}
+
+\NormalTok{ANALYSIS}\SpecialCharTok{:}
+    \SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
+\NormalTok{    type is twolevel;}
+    
+    \SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
+\NormalTok{    estimator is MLR;}
+
+\NormalTok{MODEL}\SpecialCharTok{:}
+    \SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
+    \SpecialCharTok{\%within\%}
+\NormalTok{    popular on extrav;}
+
+    \SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
+    \SpecialCharTok{\%between\%}
+\NormalTok{    popular;}
+
+\NormalTok{OUTPUT}\SpecialCharTok{:}
+    \SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
+\NormalTok{    sampstat cinterval;}
+
+\NormalTok{SAVEDATA}\SpecialCharTok{:}
+    \SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
+\NormalTok{    file is fscores.dat;}
+    
+    \SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
+\NormalTok{    save is fscores;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  Run the analysis and interpret the results.
+\item
+  Can you match the parameter estimates to the notation in the formula below?
+\item
+  Can you compute the ICC?
+\end{enumerate}
+
+\hypertarget{model-with-a-level-2-predictor}{%
+\subsection{Model with a level-2 predictor}\label{model-with-a-level-2-predictor}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Write Mplus syntax.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
+\NormalTok{TITLE}\SpecialCharTok{:}\NormalTok{ Model with a level}\DecValTok{{-}2}\NormalTok{ predictor}
+
+\NormalTok{DATA}\SpecialCharTok{:}
+    \SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
+\NormalTok{    file is popular2.dat;}
+
+\NormalTok{VARIABLE}\SpecialCharTok{:}
+    \SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
+\NormalTok{    names are class pupil cons extrav sex texp popular popteach zextrav}
+\NormalTok{    zsex ztexp zpopular zpoptch;}
+    
+    \SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
+\NormalTok{    usevariables are texp popular;}
+    
+    \SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
+\NormalTok{    cluster is class;}
+    
+    \SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
+\NormalTok{    between are texp;}
+
+\NormalTok{ANALYSIS}\SpecialCharTok{:}
+    \SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
+\NormalTok{    type is twolevel;}
+    
+    \SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
+\NormalTok{    estimator is MLR;}
+
+\NormalTok{MODEL}\SpecialCharTok{:}
+    \SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
+    \SpecialCharTok{\%within\%}
+\NormalTok{    popular;}
+
+    \SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
+    \SpecialCharTok{\%between\%}
+\NormalTok{    popular on texp;}
+
+\NormalTok{OUTPUT}\SpecialCharTok{:}
+    \SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
+\NormalTok{    sampstat cinterval;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  Run the analysis and interpret the results.
+\item
+  Can you match the parameter estimates to the notation in the formula below?
+\item
+  Can you compute the ICC?
+\end{enumerate}
+
+\hypertarget{bonus-questions-3}{%
+\section{Bonus questions}\label{bonus-questions-3}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Can you visualize the results of multilevel modeling? Let's practice with the model with a level-1 predictor that we fitted.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Clean the work space}
+\FunctionTok{rm}\NormalTok{(}\AttributeTok{list=}\FunctionTok{ls}\NormalTok{()); }\FunctionTok{gc}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##          used (Mb) gc trigger (Mb) limit (Mb) max used (Mb)
+## Ncells 498623 26.7    1090087 58.3         NA   669100 35.8
+## Vcells 908548  7.0    8388608 64.0      16384  1839720 14.1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Load required packages}
+\FunctionTok{library}\NormalTok{(MplusAutomation)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Version:  1.1.0
+## We work hard to write this free software. Please help us get credit by citing: 
+## 
+## Hallquist, M. N. & Wiley, J. F. (2018). MplusAutomation: An R Package for Facilitating Large-Scale Latent Variable Analyses in Mplus. Structural Equation Modeling, 25, 621-638. doi: 10.1080/10705511.2017.1402334.
+## 
+## -- see citation("MplusAutomation").
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(texreg)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Version:  1.38.6
+## Date:     2022-04-06
+## Author:   Philip Leifeld (University of Essex)
+## 
+## Consider submitting praise using the praise or praise_interactive functions.
+## Please cite the JSS article in your publications -- see citation("texreg").
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+
+\CommentTok{\# Extract fscores}
+\NormalTok{out }\OtherTok{\textless{}{-}} \FunctionTok{readModels}\NormalTok{(}\StringTok{"2. Model with a l1 pred.out"}\NormalTok{, }\AttributeTok{recursive =} \ConstantTok{FALSE}\NormalTok{, }
+                  \AttributeTok{what =} \StringTok{"savedata"}\NormalTok{)}
+\NormalTok{fscores }\OtherTok{\textless{}{-}}\NormalTok{ out}\SpecialCharTok{$}\NormalTok{savedata}
+\NormalTok{fscores\_classid }\OtherTok{\textless{}{-}} \FunctionTok{aggregate}\NormalTok{(fscores[,}\DecValTok{3}\SpecialCharTok{:}\DecValTok{4}\NormalTok{], }\FunctionTok{list}\NormalTok{(fscores}\SpecialCharTok{$}\NormalTok{CLASS), mean)}
+
+\CommentTok{\# Check the range of the predictor}
+\FunctionTok{range}\NormalTok{(fscores}\SpecialCharTok{$}\NormalTok{EXTRAV) }\CommentTok{\# 1 to 10}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  1 10
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Find predicted values for each level of extraversion}
+\NormalTok{pred\_popular\_classid }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(fscores\_classid[}\FunctionTok{rep}\NormalTok{(}\FunctionTok{seq}\NormalTok{(}\FunctionTok{nrow}\NormalTok{(fscores\_classid)),}
+                                                       \AttributeTok{each =} \DecValTok{10}\NormalTok{),],}
+                                   \StringTok{"extraversion"} \OtherTok{=} \DecValTok{1}\SpecialCharTok{:}\DecValTok{10}\NormalTok{)}
+\NormalTok{pred\_popular }\OtherTok{\textless{}{-}}\NormalTok{ pred\_popular\_classid}\SpecialCharTok{$}\NormalTok{B\_POPULAR }\SpecialCharTok{+} \FloatTok{0.486} \SpecialCharTok{*}\NormalTok{ pred\_popular\_classid}\SpecialCharTok{$}\NormalTok{extraversion}
+\NormalTok{pred\_popular\_classid }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(pred\_popular\_classid, pred\_popular)}
+
+\CommentTok{\# Visualization}
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ pred\_popular\_classid, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ extraversion, }\AttributeTok{y =}\NormalTok{ pred\_popular, }\AttributeTok{group =}\NormalTok{ Group}\FloatTok{.1}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{color =}\NormalTok{ Group}\FloatTok{.1}\NormalTok{), }\AttributeTok{show.legend =} \ConstantTok{FALSE}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"Extraversion"}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{"Popularity"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_y\_continuous}\NormalTok{(}\AttributeTok{lim =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{10}\NormalTok{), }\AttributeTok{breaks =} \FunctionTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{10}\NormalTok{, }\AttributeTok{by =} \DecValTok{1}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{lim =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{10}\NormalTok{), }\AttributeTok{breaks =} \FunctionTok{seq}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{10}\NormalTok{, }\AttributeTok{by =} \DecValTok{1}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{theme\_bw}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{PSY202B-Modeling-I.Heo_files/figure-latex/unnamed-chunk-9-1.pdf}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  How can you interpret the plot?
 \end{enumerate}
 
   \bibliography{book.bib,packages.bib}
