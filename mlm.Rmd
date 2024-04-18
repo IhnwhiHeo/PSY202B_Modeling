@@ -1,4 +1,4 @@
-# Structural Equation Modeling
+# Multilevel Modeling
 
 ## Building the multilevel regression model
 
