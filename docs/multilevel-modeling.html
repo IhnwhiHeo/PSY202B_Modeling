@@ -173,14 +173,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6" data-path="multilevel-modeling.html"><a href="multilevel-modeling.html"><i class="fa fa-check"></i><b>6</b> Multilevel Modeling</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="multilevel-modeling.html"><a href="multilevel-modeling.html#building-the-multilevel-regression-model"><i class="fa fa-check"></i><b>6.1</b> Building the multilevel regression model</a></li>
-<li class="chapter" data-level="6.2" data-path="multilevel-modeling.html"><a href="multilevel-modeling.html#main-questions-3"><i class="fa fa-check"></i><b>6.2</b> Main questions</a>
+<li class="chapter" data-level="6.1" data-path="multilevel-modeling.html"><a href="multilevel-modeling.html#multilevel-data"><i class="fa fa-check"></i><b>6.1</b> Multilevel data</a></li>
+<li class="chapter" data-level="6.2" data-path="multilevel-modeling.html"><a href="multilevel-modeling.html#building-the-multilevel-regression-model"><i class="fa fa-check"></i><b>6.2</b> Building the multilevel regression model</a></li>
+<li class="chapter" data-level="6.3" data-path="multilevel-modeling.html"><a href="multilevel-modeling.html#main-questions-3"><i class="fa fa-check"></i><b>6.3</b> Main questions</a>
 <ul>
-<li class="chapter" data-level="6.2.1" data-path="multilevel-modeling.html"><a href="multilevel-modeling.html#empty-model-aka.-intercept-only-model"><i class="fa fa-check"></i><b>6.2.1</b> Empty model (aka. intercept-only model)</a></li>
-<li class="chapter" data-level="6.2.2" data-path="multilevel-modeling.html"><a href="multilevel-modeling.html#model-with-a-level-1-predictor"><i class="fa fa-check"></i><b>6.2.2</b> Model with a level-1 predictor</a></li>
-<li class="chapter" data-level="6.2.3" data-path="multilevel-modeling.html"><a href="multilevel-modeling.html#model-with-a-level-2-predictor"><i class="fa fa-check"></i><b>6.2.3</b> Model with a level-2 predictor</a></li>
+<li class="chapter" data-level="6.3.1" data-path="multilevel-modeling.html"><a href="multilevel-modeling.html#empty-model-aka.-intercept-only-model"><i class="fa fa-check"></i><b>6.3.1</b> Empty model (aka. intercept-only model)</a></li>
+<li class="chapter" data-level="6.3.2" data-path="multilevel-modeling.html"><a href="multilevel-modeling.html#model-with-a-level-1-predictor"><i class="fa fa-check"></i><b>6.3.2</b> Model with a level-1 predictor</a></li>
+<li class="chapter" data-level="6.3.3" data-path="multilevel-modeling.html"><a href="multilevel-modeling.html#model-with-a-level-2-predictor"><i class="fa fa-check"></i><b>6.3.3</b> Model with a level-2 predictor</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="multilevel-modeling.html"><a href="multilevel-modeling.html#bonus-questions-3"><i class="fa fa-check"></i><b>6.3</b> Bonus questions</a></li>
+<li class="chapter" data-level="6.4" data-path="multilevel-modeling.html"><a href="multilevel-modeling.html#bonus-questions-3"><i class="fa fa-check"></i><b>6.4</b> Bonus questions</a></li>
 </ul></li>
 </ul>
 
@@ -201,20 +202,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="multilevel-modeling" class="section level1 hasAnchor" number="6">
 <h1><span class="header-section-number">Chapter 6</span> Multilevel Modeling<a href="multilevel-modeling.html#multilevel-modeling" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="building-the-multilevel-regression-model" class="section level2 hasAnchor" number="6.1">
-<h2><span class="header-section-number">6.1</span> Building the multilevel regression model<a href="multilevel-modeling.html#building-the-multilevel-regression-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="multilevel-data" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Multilevel data<a href="multilevel-modeling.html#multilevel-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We have simulated data from 100 classes, with a different number of pupils in each class. The average class size is 20 pupils. On the pupil level, we have two variables. First is the dependent variable ‘popularity’, measured on a self-rating scale that ranges from 0 (very unpopular) to 10 (very popular). Second is the independent variable ‘extraversion’, measured on a self-rating scale ranging from 1 to 10. On the class level, we have one explanatory variable ‘teacher experience’, measured in years ranging from 2 to 25.</p>
+</div>
+<div id="building-the-multilevel-regression-model" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Building the multilevel regression model<a href="multilevel-modeling.html#building-the-multilevel-regression-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We are to build three multilevel regression models in this practical. The three models to be built are as follows:</p>
 <ul>
 <li>Empty model (aka. intercept-only model)</li>
 <li>Model with a level-1 predictor</li>
 <li>Model with a level-2 predictor</li>
 </ul>
-<p>We only consider random intercepts not random slopes.</p>
-<p>On Wednesday, you will build the same three models in HLM software using a different dataset.</p>
+<p>For simplicity and illustrative purposes, we only consider random intercepts but not random slopes. On Wednesday, you will build the same three models in HLM software using a different dataset.</p>
 </div>
-<div id="main-questions-3" class="section level2 hasAnchor" number="6.2">
-<h2><span class="header-section-number">6.2</span> Main questions<a href="multilevel-modeling.html#main-questions-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="empty-model-aka.-intercept-only-model" class="section level3 hasAnchor" number="6.2.1">
-<h3><span class="header-section-number">6.2.1</span> Empty model (aka. intercept-only model)<a href="multilevel-modeling.html#empty-model-aka.-intercept-only-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="main-questions-3" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Main questions<a href="multilevel-modeling.html#main-questions-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="empty-model-aka.-intercept-only-model" class="section level3 hasAnchor" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> Empty model (aka. intercept-only model)<a href="multilevel-modeling.html#empty-model-aka.-intercept-only-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
 <li>Write Mplus syntax.</li>
 </ol>
@@ -256,11 +261,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol start="2" style="list-style-type: decimal">
 <li><p>Run the analysis and interpret the results.</p></li>
 <li><p>Can you match the parameter estimates to the notation in the formula below?</p></li>
-<li><p>Can you compute the ICC?</p></li>
+</ol>
+<p><span class="math display">\[
+\begin{gathered}
+\textbf{Level 1} \\
+y_{ij}=\beta_{0j} + r_{ij} \\ \\
+\textbf{Level 2} \\
+\beta_{0j}=\gamma_{00} + u_{0j}
+\end{gathered}
+\]</span></p>
+<ol start="4" style="list-style-type: decimal">
+<li>Can you compute the ICC?</li>
 </ol>
 </div>
-<div id="model-with-a-level-1-predictor" class="section level3 hasAnchor" number="6.2.2">
-<h3><span class="header-section-number">6.2.2</span> Model with a level-1 predictor<a href="multilevel-modeling.html#model-with-a-level-1-predictor" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="model-with-a-level-1-predictor" class="section level3 hasAnchor" number="6.3.2">
+<h3><span class="header-section-number">6.3.2</span> Model with a level-1 predictor<a href="multilevel-modeling.html#model-with-a-level-1-predictor" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
 <li>Write Mplus syntax.</li>
 </ol>
@@ -314,11 +329,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol start="2" style="list-style-type: decimal">
 <li><p>Run the analysis and interpret the results.</p></li>
 <li><p>Can you match the parameter estimates to the notation in the formula below?</p></li>
-<li><p>Can you compute the ICC?</p></li>
+</ol>
+<p><span class="math display">\[
+\begin{gathered}
+\textbf{Level 1} \\
+y_{ij}=\beta_{0j} + \color{red}{\beta_{1j}X_{ij}} + r_{ij} \\ \\
+\textbf{Level 2} \\
+\beta_{0j}=\gamma_{00} + u_{0j} \\
+\color{red}{\beta_{1j}=\gamma_{10}}
+\end{gathered}
+\]</span></p>
+<ol start="4" style="list-style-type: decimal">
+<li>Can you compute the ICC?</li>
 </ol>
 </div>
-<div id="model-with-a-level-2-predictor" class="section level3 hasAnchor" number="6.2.3">
-<h3><span class="header-section-number">6.2.3</span> Model with a level-2 predictor<a href="multilevel-modeling.html#model-with-a-level-2-predictor" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="model-with-a-level-2-predictor" class="section level3 hasAnchor" number="6.3.3">
+<h3><span class="header-section-number">6.3.3</span> Model with a level-2 predictor<a href="multilevel-modeling.html#model-with-a-level-2-predictor" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
 <li>Write Mplus syntax.</li>
 </ol>
@@ -365,20 +391,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol start="2" style="list-style-type: decimal">
 <li><p>Run the analysis and interpret the results.</p></li>
 <li><p>Can you match the parameter estimates to the notation in the formula below?</p></li>
-<li><p>Can you compute the ICC?</p></li>
+</ol>
+<p><span class="math display">\[
+\begin{gathered}
+\textbf{Level 1} \\
+y_{ij}=\beta_{0j} + r_{ij} \\ \\
+\textbf{Level 2} \\
+\beta_{0j}=\gamma_{00} + \color{red}{\gamma_{01}X_{j}} + u_{0j}
+\end{gathered}
+\]</span></p>
+<ol start="4" style="list-style-type: decimal">
+<li>Can you compute the ICC?</li>
 </ol>
 </div>
 </div>
-<div id="bonus-questions-3" class="section level2 hasAnchor" number="6.3">
-<h2><span class="header-section-number">6.3</span> Bonus questions<a href="multilevel-modeling.html#bonus-questions-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="bonus-questions-3" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Bonus questions<a href="multilevel-modeling.html#bonus-questions-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li>Can you visualize the results of multilevel modeling? Let’s practice with the model with a level-1 predictor that we fitted.</li>
 </ol>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="multilevel-modeling.html#cb9-1" tabindex="-1"></a><span class="co"># Clean the work space</span></span>
 <span id="cb9-2"><a href="multilevel-modeling.html#cb9-2" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>()); <span class="fu">gc</span>()</span></code></pre></div>
 <pre><code>##          used (Mb) gc trigger (Mb) limit (Mb) max used (Mb)
-## Ncells 530658 28.4    1181615 63.2         NA   669100 35.8
-## Vcells 946297  7.3    8388608 64.0      16384  1839720 14.1</code></pre>
+## Ncells 530673 28.4    1181667 63.2         NA   669082 35.8
+## Vcells 946679  7.3    8388608 64.0      16384  1839821 14.1</code></pre>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="multilevel-modeling.html#cb11-1" tabindex="-1"></a><span class="co"># Load required packages</span></span>
 <span id="cb11-2"><a href="multilevel-modeling.html#cb11-2" tabindex="-1"></a><span class="fu">library</span>(MplusAutomation)</span></code></pre></div>
 <pre><code>## Version:  1.1.0
