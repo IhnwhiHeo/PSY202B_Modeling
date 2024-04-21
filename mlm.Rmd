@@ -246,3 +246,4 @@ ggplot(data = pred_popular_classid, aes(x = extraversion, y = pred_popular, grou
 
 2. How can you interpret the plot?
 
+3. Can you imagine how the plot would look like when we consider random slopes?
