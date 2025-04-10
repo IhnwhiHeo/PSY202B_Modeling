@@ -36,6 +36,11 @@ model:
 ! Annotate what you are doing in this line
 manipulativeness BY senseek totmach totpower totsms totfaith;
 
+! In case you want to free the first factor loading
+! and instead scale the variance of the factor
+! manipulativeness BY senseek* totmach totpower totsms totfaith;
+! manipulativeness@1;
+
 output:
 ! Annotate what you are doing in this line
 TECH1;

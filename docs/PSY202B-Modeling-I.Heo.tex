@@ -434,6 +434,11 @@ A team of developmental psychologists (Michelle, Lucas, and Alexis) is intereste
 \SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
 \NormalTok{manipulativeness BY senseek totmach totpower totsms totfaith;}
 
+\SpecialCharTok{!}\NormalTok{ In case you want to free the first factor loading}
+\SpecialCharTok{!}\NormalTok{ and instead scale the variance of the factor}
+\SpecialCharTok{!}\NormalTok{ manipulativeness BY senseek}\SpecialCharTok{*}\NormalTok{ totmach totpower totsms totfaith;}
+\SpecialCharTok{!}\NormalTok{ manipulativeness}\SpecialCharTok{@}\DecValTok{1}\NormalTok{;}
+
 \NormalTok{output}\SpecialCharTok{:}
 \SpecialCharTok{!}\NormalTok{ Annotate what you are doing }\ControlFlowTok{in}\NormalTok{ this line}
 \NormalTok{TECH1;}
@@ -834,8 +839,8 @@ y_{ij}=\beta_{0j} + r_{ij} \\ \\
 
 \begin{verbatim}
 ##          used (Mb) gc trigger (Mb) limit (Mb) max used (Mb)
-## Ncells 501212 26.8    1097487 58.7         NA   669094 35.8
-## Vcells 912477  7.0    8388608 64.0      16384  1839769 14.1
+## Ncells 501216 26.8    1097498 58.7         NA   669094 35.8
+## Vcells 912551  7.0    8388608 64.0      16384  1839769 14.1
 \end{verbatim}
 
 \begin{Shaded}
