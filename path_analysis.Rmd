@@ -2,7 +2,7 @@
 
 ## Research scenario
 
-A team of researchers (Charlie, Emily, Aleksandr, Madelin, and Annabella) is interested in understanding the impact of anxiety and distress on hostile behavior. They are thus to conduct a path analysis to examine the interrelationships between the variables. According to the substantive theory, depression (`depress`) is predicted by anxiety (`anxiety`), and hostile behavior (`hostile`) is predicted by depression and distress. So here, depression is a mediating variable between anxiety and hostility. Two exogenous variables are anxiety and distress. Use the `mmpi.csv` dataset.
+A team of researchers (Lucas, Alexis, Michelle, Fei, and Marisela) is interested in understanding the impact of anxiety and distress on hostile behavior. They are thus to conduct a path analysis to examine the interrelationships between the variables. According to the substantive theory, depression (`depress`) is predicted by anxiety (`anxiety`), and hostile behavior (`hostile`) is predicted by depression and distress. So here, depression is a mediating variable between anxiety and hostility. Two exogenous variables are anxiety and distress. Use the `mmpi.csv` dataset.
 
 ## Main questions
 

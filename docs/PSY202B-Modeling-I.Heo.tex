@@ -116,7 +116,7 @@
 \fi
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
@@ -127,7 +127,7 @@
 
 \title{{[}PSY202B{]} Statistical Modeling in Psychological Sciences}
 \author{\href{https://ihnwhiheo.github.io/}{Ihnwhi Heo, M.Sc.}}
-\date{Spring 2024}
+\date{Spring 2025}
 
 \begin{document}
 \maketitle
@@ -136,8 +136,7 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\hypertarget{introduction}{%
-\chapter{Introduction}\label{introduction}}
+\chapter{Introduction}\label{introduction}
 
 Hi everyone! I'm Ihnwhi.
 
@@ -147,11 +146,9 @@ An essential aspect of psychological research is statistical modeling based on s
 
 Are you ready? Let's get it on!
 
-\hypertarget{introduction-to-mplus}{%
-\chapter{Introduction to Mplus}\label{introduction-to-mplus}}
+\chapter{Introduction to Mplus}\label{introduction-to-mplus}
 
-\hypertarget{what-is-it-why-called-mplus}{%
-\section{What is it? Why called Mplus?}\label{what-is-it-why-called-mplus}}
+\section{What is it? Why called Mplus?}\label{what-is-it-why-called-mplus}
 
 Mplus is a statistical modeling program that provides researchers with a flexible tool to analyze data
 
@@ -166,8 +163,7 @@ Mplus is a statistical modeling program that provides researchers with a flexibl
   Many estimator: maximum likelihood, weighted least squares, Bayesian
 \end{itemize}
 
-\hypertarget{syntax-based-programming}{%
-\section{Syntax-based programming}\label{syntax-based-programming}}
+\section{Syntax-based programming}\label{syntax-based-programming}
 
 \begin{itemize}
 \item
@@ -184,8 +180,7 @@ Mplus is a statistical modeling program that provides researchers with a flexibl
   \end{itemize}
 \end{itemize}
 
-\hypertarget{some-tips-when-programming}{%
-\section{Some tips when programming}\label{some-tips-when-programming}}
+\section{Some tips when programming}\label{some-tips-when-programming}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -207,8 +202,7 @@ Mplus is a statistical modeling program that provides researchers with a flexibl
   Otherwise, be sure to specify the correct directory
 \end{itemize}
 
-\hypertarget{some-tips-about-model-command-particularly}{%
-\section{Some tips about model command particularly}\label{some-tips-about-model-command-particularly}}
+\section{Some tips about model command particularly}\label{some-tips-about-model-command-particularly}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -220,11 +214,9 @@ Mplus is a statistical modeling program that provides researchers with a flexibl
   Care to the degrees of freedom (DF)
 \end{enumerate}
 
-\hypertarget{example-multiple-linear-regression-using-maximum-likelihood-estimation}{%
-\section{Example: Multiple linear regression using maximum likelihood estimation}\label{example-multiple-linear-regression-using-maximum-likelihood-estimation}}
+\section{Example: Multiple linear regression using maximum likelihood estimation}\label{example-multiple-linear-regression-using-maximum-likelihood-estimation}
 
-\hypertarget{model-syntax}{%
-\subsection{Model syntax}\label{model-syntax}}
+\subsection{Model syntax}\label{model-syntax}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -273,8 +265,7 @@ Mplus is a statistical modeling program that provides researchers with a flexibl
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{part-of-the-output-file}{%
-\subsection{Part of the output file}\label{part-of-the-output-file}}
+\subsection{Part of the output file}\label{part-of-the-output-file}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -296,8 +287,7 @@ Mplus is a statistical modeling program that provides researchers with a flexibl
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{additional-materials}{%
-\section{Additional materials}\label{additional-materials}}
+\section{Additional materials}\label{additional-materials}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -313,16 +303,13 @@ Mplus is a statistical modeling program that provides researchers with a flexibl
   Tutorials by Prof.~Rens van de Schoot and his students at \url{https://www.rensvandeschoot.com/tutorials/}
 \end{enumerate}
 
-\hypertarget{path-analysis}{%
-\chapter{Path Analysis}\label{path-analysis}}
+\chapter{Path Analysis}\label{path-analysis}
 
-\hypertarget{research-scenario}{%
-\section{Research scenario}\label{research-scenario}}
+\section{Research scenario}\label{research-scenario}
 
-A team of researchers (Charlie, Emily, Aleksandr, Madelin, and Annabella) is interested in understanding the impact of anxiety and distress on hostile behavior. They are thus to conduct a path analysis to examine the interrelationships between the variables. According to the substantive theory, depression (\texttt{depress}) is predicted by anxiety (\texttt{anxiety}), and hostile behavior (\texttt{hostile}) is predicted by depression and distress. So here, depression is a mediating variable between anxiety and hostility. Two exogenous variables are anxiety and distress. Use the \texttt{mmpi.csv} dataset.
+A team of researchers (Lucas, Alexis, Michelle, Fei, and Marisela) is interested in understanding the impact of anxiety and distress on hostile behavior. They are thus to conduct a path analysis to examine the interrelationships between the variables. According to the substantive theory, depression (\texttt{depress}) is predicted by anxiety (\texttt{anxiety}), and hostile behavior (\texttt{hostile}) is predicted by depression and distress. So here, depression is a mediating variable between anxiety and hostility. Two exogenous variables are anxiety and distress. Use the \texttt{mmpi.csv} dataset.
 
-\hypertarget{main-questions}{%
-\section{Main questions}\label{main-questions}}
+\section{Main questions}\label{main-questions}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -394,8 +381,7 @@ A team of researchers (Charlie, Emily, Aleksandr, Madelin, and Annabella) is int
   Run the analysis and interpret the results.
 \end{enumerate}
 
-\hypertarget{bonus-questions}{%
-\section{Bonus questions}\label{bonus-questions}}
+\section{Bonus questions}\label{bonus-questions}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -405,16 +391,13 @@ A team of researchers (Charlie, Emily, Aleksandr, Madelin, and Annabella) is int
   Calculate the degrees of freedom by hand. Compare your result with that of Mplus.
 \end{enumerate}
 
-\hypertarget{confirmatory-factor-analysis}{%
-\chapter{Confirmatory Factor Analysis}\label{confirmatory-factor-analysis}}
+\chapter{Confirmatory Factor Analysis}\label{confirmatory-factor-analysis}
 
-\hypertarget{research-scenario-1}{%
-\section{Research scenario}\label{research-scenario-1}}
+\section{Research scenario}\label{research-scenario-1}
 
-A team of researchers (Amish, Mercedes, Kavya, and Katey) is interested in constructing a psychometric theory on being manipulative to others. Our substantive theory suggests that sensation seeking (\texttt{senseek}), Machiavellianism (\texttt{totmach}), powerlessness (\texttt{totpower}), social monitoring (\texttt{totsms}), and faith (\texttt{totfaith}) measure the one underlying latent construct: being manipulative. We are thus to conduct a confirmatory factor analysis that measures manipulativeness by the five measures. Use the \texttt{mmpi.csv} dataset.
+A team of developmental psychologists (Michelle, Lucas, and Alexis) is interested in constructing a psychometric theory on being manipulative to others. Our substantive theory suggests that sensation seeking (\texttt{senseek}), Machiavellianism (\texttt{totmach}), powerlessness (\texttt{totpower}), social monitoring (\texttt{totsms}), and faith (\texttt{totfaith}) measure the one underlying latent construct: being manipulative. We are thus to conduct a confirmatory factor analysis that measures manipulativeness by the five measures. Use the \texttt{mmpi.csv} dataset.
 
-\hypertarget{main-questions-1}{%
-\section{Main questions}\label{main-questions-1}}
+\section{Main questions}\label{main-questions-1}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -468,8 +451,7 @@ A team of researchers (Amish, Mercedes, Kavya, and Katey) is interested in const
   Run the analysis and interpret the results.
 \end{enumerate}
 
-\hypertarget{bonus-questions-1}{%
-\section{Bonus questions}\label{bonus-questions-1}}
+\section{Bonus questions}\label{bonus-questions-1}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -479,16 +461,13 @@ A team of researchers (Amish, Mercedes, Kavya, and Katey) is interested in const
   Calculate the degrees of freedom by hand. Compare your result with that of Mplus.
 \end{enumerate}
 
-\hypertarget{structural-equation-modeling}{%
-\chapter{Structural Equation Modeling}\label{structural-equation-modeling}}
+\chapter{Structural Equation Modeling}\label{structural-equation-modeling}
 
-\hypertarget{research-scenario-2}{%
-\section{Research scenario}\label{research-scenario-2}}
+\section{Research scenario}\label{research-scenario-2}
 
-Based on the findings on the impact of anxiety and distress (Coward et al., 2024) and manipulative behavior (Patel et al., 2024), Ihnwhi is interested in modeling the interrelationships between manipulativeness, anxiety, and distress. In particular, the research aim is to predict being manipulative using anxiety (\texttt{anxiety}) and distress (\texttt{distress}) via structural equation modeling. For the sake of convenience, you can only use the three following variables to measure manipulativeness: sensation seeking (\texttt{senseek}), Machiavellianism (\texttt{totmach}), and social monitoring (\texttt{totsms}). Use the \texttt{mmpi.csv} dataset.
+Based on the findings on the impact of anxiety and distress (Yepez et al., 2024; Gao et al., 2025; Reimers-Contreras \& Franco, 2023) and manipulative behavior (Parnell et al., 2024), Ihnwhi is interested in modeling the interrelationships between manipulativeness, anxiety, and distress. In particular, the research aim is to predict being manipulative using anxiety (\texttt{anxiety}) and distress (\texttt{distress}) via structural equation modeling. For the sake of convenience, you can only use the three following variables to measure manipulativeness: sensation seeking (\texttt{senseek}), Machiavellianism (\texttt{totmach}), and social monitoring (\texttt{totsms}). Use the \texttt{mmpi.csv} dataset.
 
-\hypertarget{main-questions-2}{%
-\section{Main questions}\label{main-questions-2}}
+\section{Main questions}\label{main-questions-2}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -560,8 +539,7 @@ Based on the findings on the impact of anxiety and distress (Coward et al., 2024
   Run the analysis and interpret the results.
 \end{enumerate}
 
-\hypertarget{bonus-questions-2}{%
-\section{Bonus questions}\label{bonus-questions-2}}
+\section{Bonus questions}\label{bonus-questions-2}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -571,16 +549,13 @@ Based on the findings on the impact of anxiety and distress (Coward et al., 2024
   Can you interpret the TECH1 output given that the model formulation in Mplus is based on the LISREL ``all-y'' notation?
 \end{enumerate}
 
-\hypertarget{multilevel-modeling}{%
-\chapter{Multilevel Modeling}\label{multilevel-modeling}}
+\chapter{Multilevel Modeling}\label{multilevel-modeling}
 
-\hypertarget{multilevel-data}{%
-\section{Multilevel data}\label{multilevel-data}}
+\section{Multilevel data}\label{multilevel-data}
 
 We have simulated data from 100 classes, with a different number of pupils in each class. The average class size is 20 pupils. On the pupil level, we have two variables. First is the dependent variable `popularity', measured on a self-rating scale that ranges from 0 (very unpopular) to 10 (very popular). Second is the independent variable `extraversion', measured on a self-rating scale ranging from 1 to 10. On the class level, we have one explanatory variable `teacher experience', measured in years ranging from 2 to 25.
 
-\hypertarget{building-the-multilevel-regression-model}{%
-\section{Building the multilevel regression model}\label{building-the-multilevel-regression-model}}
+\section{Building the multilevel regression model}\label{building-the-multilevel-regression-model}
 
 We are to build three multilevel regression models in this practical. The three models to be built are as follows:
 
@@ -596,11 +571,9 @@ We are to build three multilevel regression models in this practical. The three 
 
 For simplicity and illustrative purposes, we only consider random intercepts but not random slopes. On Wednesday, you will build the same three models in HLM software using a different dataset.
 
-\hypertarget{main-questions-3}{%
-\section{Main questions}\label{main-questions-3}}
+\section{Main questions}\label{main-questions-3}
 
-\hypertarget{empty-model-aka.-intercept-only-model}{%
-\subsection{Empty model (aka. intercept-only model)}\label{empty-model-aka.-intercept-only-model}}
+\subsection{Empty model (aka. intercept-only model)}\label{empty-model-aka.-intercept-only-model}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -675,8 +648,7 @@ y_{ij}=\beta_{0j} + r_{ij} \\ \\
   Can you compute the ICC?
 \end{enumerate}
 
-\hypertarget{model-with-a-level-1-predictor}{%
-\subsection{Model with a level-1 predictor}\label{model-with-a-level-1-predictor}}
+\subsection{Model with a level-1 predictor}\label{model-with-a-level-1-predictor}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -764,8 +736,7 @@ y_{ij}=\beta_{0j} + \color{red}{\beta_{1j}X_{ij}} + r_{ij} \\ \\
   Can you compute the ICC?
 \end{enumerate}
 
-\hypertarget{model-with-a-level-2-predictor}{%
-\subsection{Model with a level-2 predictor}\label{model-with-a-level-2-predictor}}
+\subsection{Model with a level-2 predictor}\label{model-with-a-level-2-predictor}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -845,8 +816,7 @@ y_{ij}=\beta_{0j} + r_{ij} \\ \\
   Can you compute the ICC?
 \end{enumerate}
 
-\hypertarget{bonus-questions-3}{%
-\section{Bonus questions}\label{bonus-questions-3}}
+\section{Bonus questions}\label{bonus-questions-3}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -864,8 +834,8 @@ y_{ij}=\beta_{0j} + r_{ij} \\ \\
 
 \begin{verbatim}
 ##          used (Mb) gc trigger (Mb) limit (Mb) max used (Mb)
-## Ncells 498640 26.7    1090135 58.3         NA   669100 35.8
-## Vcells 908954  7.0    8388608 64.0      16384  1839720 14.1
+## Ncells 501212 26.8    1097487 58.7         NA   669094 35.8
+## Vcells 912477  7.0    8388608 64.0      16384  1839769 14.1
 \end{verbatim}
 
 \begin{Shaded}
@@ -876,7 +846,11 @@ y_{ij}=\beta_{0j} + r_{ij} \\ \\
 \end{Shaded}
 
 \begin{verbatim}
-## Version:  1.1.0
+## Warning: package 'MplusAutomation' was built under R version 4.2.3
+\end{verbatim}
+
+\begin{verbatim}
+## Version:  1.1.1
 ## We work hard to write this free software. Please help us get credit by citing: 
 ## 
 ## Hallquist, M. N. & Wiley, J. F. (2018). MplusAutomation: An R Package for Facilitating Large-Scale Latent Variable Analyses in Mplus. Structural Equation Modeling, 25, 621-638. doi: 10.1080/10705511.2017.1402334.
@@ -891,9 +865,9 @@ y_{ij}=\beta_{0j} + r_{ij} \\ \\
 \end{Shaded}
 
 \begin{verbatim}
-## Version:  1.38.6
-## Date:     2022-04-06
-## Author:   Philip Leifeld (University of Essex)
+## Version:  1.39.4
+## Date:     2024-07-23
+## Author:   Philip Leifeld (University of Manchester)
 ## 
 ## Consider submitting praise using the praise or praise_interactive functions.
 ## Please cite the JSS article in your publications -- see citation("texreg").
@@ -902,7 +876,15 @@ y_{ij}=\beta_{0j} + r_{ij} \\ \\
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{library}\NormalTok{(ggplot2)}
+\end{Highlighting}
+\end{Shaded}
 
+\begin{verbatim}
+## Warning: package 'ggplot2' was built under R version 4.2.3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \CommentTok{\# Extract fscores}
 \NormalTok{out }\OtherTok{\textless{}{-}} \FunctionTok{readModels}\NormalTok{(}\StringTok{"2. Model with a l1 pred.out"}\NormalTok{, }\AttributeTok{recursive =} \ConstantTok{FALSE}\NormalTok{, }
                   \AttributeTok{what =} \StringTok{"savedata"}\NormalTok{)}

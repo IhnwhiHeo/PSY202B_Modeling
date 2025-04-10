@@ -2,7 +2,7 @@
 
 ## Research scenario
 
-A team of researchers (Amish, Mercedes, Kavya, and Katey) is interested in constructing a psychometric theory on being manipulative to others. Our substantive theory suggests that sensation seeking (`senseek`), Machiavellianism (`totmach`), powerlessness (`totpower`), social monitoring (`totsms`), and faith (`totfaith`) measure the one underlying latent construct: being manipulative. We are thus to conduct a confirmatory factor analysis that measures manipulativeness by the five measures. Use the `mmpi.csv` dataset.
+A team of developmental psychologists (Michelle, Lucas, and Alexis) is interested in constructing a psychometric theory on being manipulative to others. Our substantive theory suggests that sensation seeking (`senseek`), Machiavellianism (`totmach`), powerlessness (`totpower`), social monitoring (`totsms`), and faith (`totfaith`) measure the one underlying latent construct: being manipulative. We are thus to conduct a confirmatory factor analysis that measures manipulativeness by the five measures. Use the `mmpi.csv` dataset.
 
 ## Main questions
 

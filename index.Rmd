@@ -1,7 +1,7 @@
 --- 
 title: "[PSY202B] Statistical Modeling in Psychological Sciences"
 author: "[Ihnwhi Heo, M.Sc.](https://ihnwhiheo.github.io/)"
-date: "Spring 2024"
+date: "Spring 2025"
 description: This GitBook is for guest lectures in PSY202B.
 documentclass: book
 github-repo: ihnwhiheo/gitbook-demo

@@ -2,7 +2,7 @@
 
 ## Research scenario
 
-Based on the findings on the impact of anxiety and distress (Coward et al., 2024) and manipulative behavior (Patel et al., 2024), Ihnwhi is interested in modeling the interrelationships between manipulativeness, anxiety, and distress. In particular, the research aim is to predict being manipulative using anxiety (`anxiety`) and distress (`distress`) via structural equation modeling. For the sake of convenience, you can only use the three following variables to measure manipulativeness: sensation seeking (`senseek`), Machiavellianism (`totmach`), and social monitoring (`totsms`). Use the `mmpi.csv` dataset.
+Based on the findings on the impact of anxiety and distress (Yepez et al., 2024; Gao et al., 2025; Reimers-Contreras & Franco, 2023) and manipulative behavior (Parnell et al., 2024), Ihnwhi is interested in modeling the interrelationships between manipulativeness, anxiety, and distress. In particular, the research aim is to predict being manipulative using anxiety (`anxiety`) and distress (`distress`) via structural equation modeling. For the sake of convenience, you can only use the three following variables to measure manipulativeness: sensation seeking (`senseek`), Machiavellianism (`totmach`), and social monitoring (`totsms`). Use the `mmpi.csv` dataset.
 
 ## Main questions
 
